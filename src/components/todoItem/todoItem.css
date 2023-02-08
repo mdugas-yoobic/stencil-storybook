@@ -1,0 +1,29 @@
+li {
+  /* display: block; */
+  /* padding: 10px; */
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin: auto;
+  padding: 10px;
+  width: 50%;
+  background-color: cyan;
+}
+
+li button {
+  /* float: right; */
+  background-color: red;
+}
+li span {
+  background-color: orange;
+  margin: 10px;
+  /* display: inline-block; */
+  /* width: 100%; */
+}
+
+.todo {
+  text-decoration: underline;
+}
+.done {
+  text-decoration: line-through;
+}

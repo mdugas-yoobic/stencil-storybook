@@ -5,20 +5,101 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Item } from "./components/todoItem/todoItem";
 export namespace Components {
+    interface ButtonComp {
+        "active": boolean;
+        "name": string;
+    }
+    interface FirstComp {
+        "name": string;
+    }
+    interface ItemList {
+        "delay": number;
+    }
+    interface TodoItem {
+        "item": Item;
+    }
+    interface TodoSection {
+    }
+}
+export interface TodoSectionCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTodoSectionElement;
 }
 declare global {
+    interface HTMLButtonCompElement extends Components.ButtonComp, HTMLStencilElement {
+    }
+    var HTMLButtonCompElement: {
+        prototype: HTMLButtonCompElement;
+        new (): HTMLButtonCompElement;
+    };
+    interface HTMLFirstCompElement extends Components.FirstComp, HTMLStencilElement {
+    }
+    var HTMLFirstCompElement: {
+        prototype: HTMLFirstCompElement;
+        new (): HTMLFirstCompElement;
+    };
+    interface HTMLItemListElement extends Components.ItemList, HTMLStencilElement {
+    }
+    var HTMLItemListElement: {
+        prototype: HTMLItemListElement;
+        new (): HTMLItemListElement;
+    };
+    interface HTMLTodoItemElement extends Components.TodoItem, HTMLStencilElement {
+    }
+    var HTMLTodoItemElement: {
+        prototype: HTMLTodoItemElement;
+        new (): HTMLTodoItemElement;
+    };
+    interface HTMLTodoSectionElement extends Components.TodoSection, HTMLStencilElement {
+    }
+    var HTMLTodoSectionElement: {
+        prototype: HTMLTodoSectionElement;
+        new (): HTMLTodoSectionElement;
+    };
     interface HTMLElementTagNameMap {
+        "button-comp": HTMLButtonCompElement;
+        "first-comp": HTMLFirstCompElement;
+        "item-list": HTMLItemListElement;
+        "todo-item": HTMLTodoItemElement;
+        "todo-section": HTMLTodoSectionElement;
     }
 }
 declare namespace LocalJSX {
+    interface ButtonComp {
+        "active"?: boolean;
+        "name"?: string;
+    }
+    interface FirstComp {
+        "name"?: string;
+    }
+    interface ItemList {
+        "delay"?: number;
+    }
+    interface TodoItem {
+        "item"?: Item;
+    }
+    interface TodoSection {
+        "onClearListEvent"?: (event: TodoSectionCustomEvent<any>) => void;
+    }
     interface IntrinsicElements {
+        "button-comp": ButtonComp;
+        "first-comp": FirstComp;
+        "item-list": ItemList;
+        "todo-item": TodoItem;
+        "todo-section": TodoSection;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "button-comp": LocalJSX.ButtonComp & JSXBase.HTMLAttributes<HTMLButtonCompElement>;
+            "first-comp": LocalJSX.FirstComp & JSXBase.HTMLAttributes<HTMLFirstCompElement>;
+            "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;
+            "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;
+            "todo-section": LocalJSX.TodoSection & JSXBase.HTMLAttributes<HTMLTodoSectionElement>;
         }
     }
 }
