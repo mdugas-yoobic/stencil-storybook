@@ -5,7 +5,6 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Item } from "./components/todoItem/todoItem";
 export namespace Components {
     interface ButtonComp {
         "active": boolean;
@@ -18,7 +17,7 @@ export namespace Components {
         "delay": number;
     }
     interface TodoItem {
-        "item": Item;
+        "description": string;
     }
     interface TodoSection {
     }
@@ -78,7 +77,7 @@ declare namespace LocalJSX {
         "delay"?: number;
     }
     interface TodoItem {
-        "item"?: Item;
+        "description"?: string;
     }
     interface TodoSection {
         "onClearListEvent"?: (event: TodoSectionCustomEvent<any>) => void;
