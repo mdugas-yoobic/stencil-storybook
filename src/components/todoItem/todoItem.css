@@ -8,17 +8,19 @@ li {
   padding: 10px;
   width: 50%;
   background-color: cyan;
+  display: flex;
 }
 
 li button {
-  /* float: right; */
   background-color: red;
+  margin: 5px;
 }
-li span {
+
+li input {
   background-color: orange;
   margin: 10px;
-  /* display: inline-block; */
-  /* width: 100%; */
+  flex: 1;
+  text-align: center;
 }
 
 .todo {
