@@ -14,6 +14,7 @@
     "lint:style:fix": "stylelint --fix **/*.{css,scss}",
     "prepare": "husky install",
     "stencil": "stencil build --watch",
+    "start": "stencil build --dev --watch --serve",
     "storybook": "start-storybook -p 6006",
     "test": "stencil test --spec",
     "test:watch": "stencil test --spec --watchAll"

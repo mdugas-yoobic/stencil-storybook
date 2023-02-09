@@ -1,5 +1,5 @@
 import { h } from '@stencil/core';
-import React from "react";
+import React from 'react';
 
 export default {
   title: 'Todo Item',
@@ -10,9 +10,10 @@ export default {
 };
 
 export const Item = () => {
-return (
-<div>
-<todo-item description="test"></todo-item>
-<todo-item description="deuxieme"></todo-item>
-</div>);
-}
+  return (
+    <div>
+      <todo-item description="test" uuid={1}></todo-item>
+      <todo-item description="deuxieme" uuid={2}></todo-item>
+    </div>
+  );
+};

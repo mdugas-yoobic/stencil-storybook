@@ -1,31 +1,25 @@
 li {
   /* display: block; */
+
   /* padding: 10px; */
   list-style-type: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin: auto;
+  margin: 2px;
   padding: 10px;
-  width: 50%;
-  background-color: cyan;
   display: flex;
-}
-
-li button {
-  background-color: red;
-  margin: 5px;
+  flex-flow: row wrap;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
 }
 
 li input {
-  background-color: orange;
+  background-color: #ccc;
   margin: 10px;
-  flex: 1;
   text-align: center;
+  border-radius: 10px;
+  width: auto;
 }
 
-.todo {
-  text-decoration: underline;
-}
 .done {
   text-decoration: line-through;
 }

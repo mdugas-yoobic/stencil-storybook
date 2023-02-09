@@ -5,34 +5,38 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Item } from "./components/todoItem/todoItem";
+import { Item as Item1 } from "./components/todoItem/todoItem";
 export namespace Components {
-    interface ButtonComp {
-        "active": boolean;
-        "name": string;
-    }
     interface FirstComp {
         "name": string;
     }
     interface ItemList {
         "delay": number;
     }
+    interface TodoComplete {
+        "todoItems": Item[];
+    }
     interface TodoItem {
         "description": string;
+        "done": boolean;
+        "uuid": number;
     }
     interface TodoSection {
     }
+    interface XButton {
+        "enable": boolean;
+    }
+}
+export interface TodoItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLTodoItemElement;
 }
 export interface TodoSectionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLTodoSectionElement;
 }
 declare global {
-    interface HTMLButtonCompElement extends Components.ButtonComp, HTMLStencilElement {
-    }
-    var HTMLButtonCompElement: {
-        prototype: HTMLButtonCompElement;
-        new (): HTMLButtonCompElement;
-    };
     interface HTMLFirstCompElement extends Components.FirstComp, HTMLStencilElement {
     }
     var HTMLFirstCompElement: {
@@ -44,6 +48,12 @@ declare global {
     var HTMLItemListElement: {
         prototype: HTMLItemListElement;
         new (): HTMLItemListElement;
+    };
+    interface HTMLTodoCompleteElement extends Components.TodoComplete, HTMLStencilElement {
+    }
+    var HTMLTodoCompleteElement: {
+        prototype: HTMLTodoCompleteElement;
+        new (): HTMLTodoCompleteElement;
     };
     interface HTMLTodoItemElement extends Components.TodoItem, HTMLStencilElement {
     }
@@ -57,48 +67,63 @@ declare global {
         prototype: HTMLTodoSectionElement;
         new (): HTMLTodoSectionElement;
     };
+    interface HTMLXButtonElement extends Components.XButton, HTMLStencilElement {
+    }
+    var HTMLXButtonElement: {
+        prototype: HTMLXButtonElement;
+        new (): HTMLXButtonElement;
+    };
     interface HTMLElementTagNameMap {
-        "button-comp": HTMLButtonCompElement;
         "first-comp": HTMLFirstCompElement;
         "item-list": HTMLItemListElement;
+        "todo-complete": HTMLTodoCompleteElement;
         "todo-item": HTMLTodoItemElement;
         "todo-section": HTMLTodoSectionElement;
+        "x-button": HTMLXButtonElement;
     }
 }
 declare namespace LocalJSX {
-    interface ButtonComp {
-        "active"?: boolean;
-        "name"?: string;
-    }
     interface FirstComp {
         "name"?: string;
     }
     interface ItemList {
         "delay"?: number;
     }
+    interface TodoComplete {
+        "todoItems"?: Item[];
+    }
     interface TodoItem {
         "description"?: string;
+        "done"?: boolean;
+        "onShouldDelete"?: (event: TodoItemCustomEvent<number>) => void;
+        "onUpdatedDescription"?: (event: TodoItemCustomEvent<Item>) => void;
+        "uuid": number;
     }
     interface TodoSection {
         "onClearListEvent"?: (event: TodoSectionCustomEvent<any>) => void;
     }
+    interface XButton {
+        "enable"?: boolean;
+    }
     interface IntrinsicElements {
-        "button-comp": ButtonComp;
         "first-comp": FirstComp;
         "item-list": ItemList;
+        "todo-complete": TodoComplete;
         "todo-item": TodoItem;
         "todo-section": TodoSection;
+        "x-button": XButton;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "button-comp": LocalJSX.ButtonComp & JSXBase.HTMLAttributes<HTMLButtonCompElement>;
             "first-comp": LocalJSX.FirstComp & JSXBase.HTMLAttributes<HTMLFirstCompElement>;
             "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;
+            "todo-complete": LocalJSX.TodoComplete & JSXBase.HTMLAttributes<HTMLTodoCompleteElement>;
             "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;
             "todo-section": LocalJSX.TodoSection & JSXBase.HTMLAttributes<HTMLTodoSectionElement>;
+            "x-button": LocalJSX.XButton & JSXBase.HTMLAttributes<HTMLXButtonElement>;
         }
     }
 }

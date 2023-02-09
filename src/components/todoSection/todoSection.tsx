@@ -1,23 +1,22 @@
-import { Component, Event, EventEmitter,h} from '@stencil/core';
+import { Component, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
-    tag: 'todo-section',
+  tag: 'todo-section'
 })
 export class TodoSection {
+  @Event() clearListEvent: EventEmitter;
 
-    @Event({bubbles: true}) clearListEvent: EventEmitter;
+  onClearClick = () => {
+    this.clearListEvent.emit();
+  };
 
-    onClearClick = () => {
-        this.clearListEvent.emit();
-    }
-
-    render() {
-        return (
-<cdiv>
-<h1>To-Do Tool</h1>
-<button onClick={this.onClearClick}>Clear</button>
-<item-list delay={1000}></item-list>
-</cdiv>
-        );
-    }
+  render() {
+    return (
+      <cdiv>
+        <h1>To-Do Tool</h1>
+        <button onClick={this.onClearClick}>Clear</button>
+        <item-list delay={1000}></item-list>
+      </cdiv>
+    );
+  }
 }

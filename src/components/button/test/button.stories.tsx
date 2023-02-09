@@ -8,4 +8,9 @@ export default {
   }
 };
 
-export const BtnBasic = () => <button-comp name='basic' color='red'></button-comp>
+export const BtnBasic = () => (
+  <div>
+    <x-button color="red">Name</x-button>
+    <x-button enable={false}>Name</x-button>
+  </div>
+);

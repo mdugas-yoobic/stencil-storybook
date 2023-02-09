@@ -1,0 +1,14 @@
+div {
+  /* display: block; */
+
+  /* padding: 10px; */
+  list-style-type: none;
+  margin: auto;
+  padding: 10px;
+  max-width: 1000px;
+}
+
+ul {
+  display: flex;
+  flex-flow: column wrap;
+}

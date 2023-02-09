@@ -1,16 +1,19 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'button-comp',
-  styleUrl: 'button.css'
+  tag: 'x-button',
+  styleUrl: 'button.css',
+  shadow: true
 })
-
 export class BtnComp {
   // Indicate that name should be a public property on the Component
-  @Prop() active: boolean;
-  @Prop() name: string;
+  @Prop() enable = true;
 
   render() {
-    return <button class='btn-class'>{this.name}</button>;
+    return (
+      <button disabled={!this.enable}>
+        <slot />
+      </button>
+    );
   }
 }
