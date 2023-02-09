@@ -27,6 +27,11 @@ export namespace Components {
     interface XButton {
         "enable": boolean;
     }
+    interface XNavItem {
+        "class": string;
+    }
+    interface XNavbar {
+    }
 }
 export interface TodoItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -73,6 +78,18 @@ declare global {
         prototype: HTMLXButtonElement;
         new (): HTMLXButtonElement;
     };
+    interface HTMLXNavItemElement extends Components.XNavItem, HTMLStencilElement {
+    }
+    var HTMLXNavItemElement: {
+        prototype: HTMLXNavItemElement;
+        new (): HTMLXNavItemElement;
+    };
+    interface HTMLXNavbarElement extends Components.XNavbar, HTMLStencilElement {
+    }
+    var HTMLXNavbarElement: {
+        prototype: HTMLXNavbarElement;
+        new (): HTMLXNavbarElement;
+    };
     interface HTMLElementTagNameMap {
         "first-comp": HTMLFirstCompElement;
         "item-list": HTMLItemListElement;
@@ -80,6 +97,8 @@ declare global {
         "todo-item": HTMLTodoItemElement;
         "todo-section": HTMLTodoSectionElement;
         "x-button": HTMLXButtonElement;
+        "x-nav-item": HTMLXNavItemElement;
+        "x-navbar": HTMLXNavbarElement;
     }
 }
 declare namespace LocalJSX {
@@ -105,6 +124,11 @@ declare namespace LocalJSX {
     interface XButton {
         "enable"?: boolean;
     }
+    interface XNavItem {
+        "class"?: string;
+    }
+    interface XNavbar {
+    }
     interface IntrinsicElements {
         "first-comp": FirstComp;
         "item-list": ItemList;
@@ -112,6 +136,8 @@ declare namespace LocalJSX {
         "todo-item": TodoItem;
         "todo-section": TodoSection;
         "x-button": XButton;
+        "x-nav-item": XNavItem;
+        "x-navbar": XNavbar;
     }
 }
 export { LocalJSX as JSX };
@@ -124,6 +150,8 @@ declare module "@stencil/core" {
             "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;
             "todo-section": LocalJSX.TodoSection & JSXBase.HTMLAttributes<HTMLTodoSectionElement>;
             "x-button": LocalJSX.XButton & JSXBase.HTMLAttributes<HTMLXButtonElement>;
+            "x-nav-item": LocalJSX.XNavItem & JSXBase.HTMLAttributes<HTMLXNavItemElement>;
+            "x-navbar": LocalJSX.XNavbar & JSXBase.HTMLAttributes<HTMLXNavbarElement>;
         }
     }
 }

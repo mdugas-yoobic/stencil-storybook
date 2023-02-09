@@ -3,3 +3,4 @@ node_modules/
 # Stencil files
 dist/
 loader/
+www/
