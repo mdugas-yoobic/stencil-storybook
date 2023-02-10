@@ -1,0 +1,27 @@
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  height: 60px;
+  width: 700px;
+  background: #f6f8fa;
+  border: 1px solid #aaa;
+  border-radius: 7px 7px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.left,
+div.right {
+  width: 50%;
+  display: flex;
+  align-items: baseline;
+  padding: 10px;
+}
+
+div.right {
+  justify-content: flex-end;
+}

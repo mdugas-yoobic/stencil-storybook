@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+:host([align='left']) {
+  justify-content: flex-start;
+  padding-left: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: black;
+}
+
+a:hover,
+a:active {
+  color: #2e67d3;
+}
+
+a.underline:hover {
+  text-decoration: underline;
+}

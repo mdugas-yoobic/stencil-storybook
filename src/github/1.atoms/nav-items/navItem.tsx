@@ -1,11 +1,11 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'x-nav-item',
+  tag: 'gh-nav-item',
   styleUrl: 'navItem.css',
   shadow: true
 })
-export class XNavItem {
+export class GhNavItem {
   @Prop() class: string;
 
   render() {

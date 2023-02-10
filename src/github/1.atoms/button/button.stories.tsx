@@ -1,8 +1,8 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'Nav Items',
-  component: 'x-nav-item',
+  title: 'GH Button',
+  component: 'gh-button',
   parameters: {
     viewmode: 'story'
   }
@@ -10,7 +10,6 @@ export default {
 
 export const Basic = () => (
   <div>
-    <x-nav-item>Normal</x-nav-item>
-    <x-nav-item class={'inverted'}>Inverted</x-nav-item>
+    <gh-button>Normal</gh-button>
   </div>
 );
