@@ -1,9 +1,8 @@
+:host {
+  display: flex;
+}
+
 nav {
-  display: inline;
-
-  /* flex-flow: row wrap; */
-
-  /* width:500px; */
   margin: 5px;
   padding: 5px;
 }

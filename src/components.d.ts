@@ -16,7 +16,6 @@ export namespace Components {
     }
     interface GhA {
         "align": string;
-        "class": string;
         "url": string;
     }
     interface GhButton {
@@ -189,7 +188,6 @@ declare namespace LocalJSX {
     }
     interface GhA {
         "align"?: string;
-        "class"?: string;
         "url"?: string;
     }
     interface GhButton {

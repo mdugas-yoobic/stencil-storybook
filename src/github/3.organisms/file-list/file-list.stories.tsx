@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH File List',
+  title: 'GH/Organisms/File List',
   component: 'gh-file-list',
   parameters: {
     viewmode: 'story'

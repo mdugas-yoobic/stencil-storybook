@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH Dropdown button',
+  title: 'GH/Molecules/Dropdown button',
   component: 'gh-dropdown-button',
   parameters: {
     viewmode: 'story'

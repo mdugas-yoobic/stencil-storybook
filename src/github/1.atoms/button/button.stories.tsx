@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH Button',
+  title: 'GH/Atoms/Button',
   component: 'gh-button',
   parameters: {
     viewmode: 'story'

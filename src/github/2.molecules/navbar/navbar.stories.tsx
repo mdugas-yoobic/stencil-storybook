@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH Navbar',
+  title: 'GH/Molecules/Navbar',
   component: 'gh-navbar',
   parameters: {
     viewmode: 'story'

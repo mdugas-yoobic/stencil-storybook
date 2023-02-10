@@ -3,7 +3,7 @@ import { h } from '@stencil/core';
 import { FileData } from './file-line';
 
 export default {
-  title: 'GH File Line',
+  title: 'GH/Molecules/File Line',
   component: 'gh-file-line',
   parameters: {
     viewmode: 'story'

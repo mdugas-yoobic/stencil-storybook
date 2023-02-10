@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH Icons',
+  title: 'GH/Atoms/Icons',
   component: 'gh-icon',
   parameters: {
     viewmode: 'story'

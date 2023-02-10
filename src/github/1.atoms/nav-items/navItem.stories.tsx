@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH Nav Item',
+  title: 'GH/Atoms/Nav Item',
   component: 'gh-nav-item',
   parameters: {
     viewmode: 'story'

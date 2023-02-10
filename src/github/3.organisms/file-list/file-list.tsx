@@ -28,18 +28,12 @@ export class GhFileList {
         <li>
           <div class={'left'}>
             <gh-icon type={'user'}> </gh-icon>
-            <gh-a class={'underline'} align={'left'}>
-              {this.repoData.username}
-            </gh-a>
+            <gh-a class={'underline'}>{this.repoData.username}</gh-a>
             <gh-a class={'underline'}>{this.repoData.lastCommit}</gh-a>
           </div>
           <div class={'right'}>
-            <gh-a class={'underline'} align={'left'}>
-              {this.repoData.lastHash}
-            </gh-a>
-            <gh-a class={'underline'} align={'left'}>
-              {this.repoData.lastDate}
-            </gh-a>
+            <gh-a class={'underline'}>{this.repoData.lastHash}</gh-a>
+            <gh-a class={'underline'}>{this.repoData.lastDate}</gh-a>
             <gh-a class={'underline'}>
               <span>{this.repoData.numberOfCommits} commits</span>
             </gh-a>

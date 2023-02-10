@@ -6,13 +6,12 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class GhA {
-  @Prop() class: string;
   @Prop({ reflect: true }) align: string;
   @Prop() url: string;
 
   render() {
     return (
-      <a href={this.url} class={this.class} target={'_blank'}>
+      <a href={this.url} target={'_blank'}>
         <slot />
       </a>
     );
