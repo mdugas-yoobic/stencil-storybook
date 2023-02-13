@@ -1,0 +1,20 @@
+:host {
+  width: 90%;
+  height: 10px;
+  display: flex;
+}
+
+span {
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+span:first-child {
+  border: hidden;
+  border-radius: 5px 0 0 5px;
+}
+
+span:last-child {
+  border: hidden;
+  border-radius: 0 5px 5px 0;
+}

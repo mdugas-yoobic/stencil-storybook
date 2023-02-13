@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+span {
+  margin-left: 5px;
+}
+
+.language {
+  font-weight: bold;
+}

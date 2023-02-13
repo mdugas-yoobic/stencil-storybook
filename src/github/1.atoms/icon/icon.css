@@ -27,3 +27,8 @@ span {
   border-style: hidden;
   background: green;
 }
+
+.small-circle {
+  border-radius: 100%;
+  border-style: hidden;
+}
