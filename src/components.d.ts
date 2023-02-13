@@ -60,6 +60,10 @@ export namespace Components {
         "class": string;
         "items": string[];
     }
+    interface GhPackageSection {
+    }
+    interface GhReleaseSection {
+    }
     interface ItemList {
         "delay": number;
     }
@@ -164,6 +168,18 @@ declare global {
         prototype: HTMLGhNavbarElement;
         new (): HTMLGhNavbarElement;
     };
+    interface HTMLGhPackageSectionElement extends Components.GhPackageSection, HTMLStencilElement {
+    }
+    var HTMLGhPackageSectionElement: {
+        prototype: HTMLGhPackageSectionElement;
+        new (): HTMLGhPackageSectionElement;
+    };
+    interface HTMLGhReleaseSectionElement extends Components.GhReleaseSection, HTMLStencilElement {
+    }
+    var HTMLGhReleaseSectionElement: {
+        prototype: HTMLGhReleaseSectionElement;
+        new (): HTMLGhReleaseSectionElement;
+    };
     interface HTMLItemListElement extends Components.ItemList, HTMLStencilElement {
     }
     var HTMLItemListElement: {
@@ -208,6 +224,8 @@ declare global {
         "gh-language-section": HTMLGhLanguageSectionElement;
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
+        "gh-package-section": HTMLGhPackageSectionElement;
+        "gh-release-section": HTMLGhReleaseSectionElement;
         "item-list": HTMLItemListElement;
         "todo-complete": HTMLTodoCompleteElement;
         "todo-item": HTMLTodoItemElement;
@@ -263,6 +281,10 @@ declare namespace LocalJSX {
         "class"?: string;
         "items"?: string[];
     }
+    interface GhPackageSection {
+    }
+    interface GhReleaseSection {
+    }
     interface ItemList {
         "delay"?: number;
     }
@@ -296,6 +318,8 @@ declare namespace LocalJSX {
         "gh-language-section": GhLanguageSection;
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
+        "gh-package-section": GhPackageSection;
+        "gh-release-section": GhReleaseSection;
         "item-list": ItemList;
         "todo-complete": TodoComplete;
         "todo-item": TodoItem;
@@ -320,6 +344,8 @@ declare module "@stencil/core" {
             "gh-language-section": LocalJSX.GhLanguageSection & JSXBase.HTMLAttributes<HTMLGhLanguageSectionElement>;
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
+            "gh-package-section": LocalJSX.GhPackageSection & JSXBase.HTMLAttributes<HTMLGhPackageSectionElement>;
+            "gh-release-section": LocalJSX.GhReleaseSection & JSXBase.HTMLAttributes<HTMLGhReleaseSectionElement>;
             "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;
             "todo-complete": LocalJSX.TodoComplete & JSXBase.HTMLAttributes<HTMLTodoCompleteElement>;
             "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;

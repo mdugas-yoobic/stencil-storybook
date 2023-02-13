@@ -5,11 +5,6 @@
   margin: 5px;
 }
 
-:host(.align-left) {
-  justify-content: flex-start;
-  padding-left: 5px;
-}
-
 a {
   text-decoration: none;
 }
@@ -24,6 +19,17 @@ a:active {
   color: #2e67d3;
 }
 
+:host(.align-left) {
+  justify-content: flex-start;
+  padding-left: 5px;
+}
+
 :host(.underline) a:hover {
   text-decoration: underline;
+}
+
+:host(.blue),
+:host(.blue) a:link,
+:host(.blue) a:visited {
+  color: #2e67d3;
 }

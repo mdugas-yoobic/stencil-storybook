@@ -13,7 +13,10 @@ export const Basic = () => (
     <gh-a url={'https://google.co.uk'}>Link</gh-a>
     <br />
     <gh-a url={'https://google.fr'} class={'underline align-left'}>
-      Link left aligned
+      Link align-left underline
+    </gh-a>
+    <gh-a url={'https://google.fr'} class={'blue'}>
+      Blue Link
     </gh-a>
   </div>
 );
