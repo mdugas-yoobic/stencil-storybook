@@ -32,12 +32,8 @@ export class GhFileLine {
         <div class="iconslot">
           <gh-icon type={this.fileData.icon}></gh-icon>
         </div>
-        <gh-a class={'underline'} align={'left'}>
-          {this.fileData.filename}
-        </gh-a>
-        <gh-a class={'underline commit'} align={'left'}>
-          {this.fileData.commitComment}
-        </gh-a>
+        <gh-a class={'underline align-left filename'}>{this.fileData.filename}</gh-a>
+        <gh-a class={'underline align-left commit'}>{this.fileData.commitComment}</gh-a>
         <div class={'date'}>{this.fileData.dateField}</div>
       </li>
     );

@@ -13,4 +13,4 @@ const languages = [
   { language: 'HTML', color: '#0a2', pourcent: '30' },
   { language: 'Bash', color: '#9de', pourcent: '1' }
 ];
-export const Basic = () => <gh-language-bar languagesList={languages}></gh-language-bar>;
+export const Basic = () => <gh-language-bar languages={languages}></gh-language-bar>;

@@ -1,8 +1,4 @@
-div {
-  width: 250px;
-}
-
-p {
+.tag-list {
   display: flex;
   flex-flow: row wrap;
 }

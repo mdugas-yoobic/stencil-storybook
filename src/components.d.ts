@@ -5,10 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { TLanguage } from "./github/1.atoms/languageBar/language-bar";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TIcons } from "./github/1.atoms/icon/icon";
-import { TLanguage } from "./github/1.atoms/languageBar/language-bar";
 import { TLanguage as TLanguage1 } from "./github/1.atoms/languageBar/language-bar";
 import { Item } from "./components/todoItem/todoItem";
 import { Item as Item1 } from "./components/todoItem/todoItem";
@@ -20,16 +20,18 @@ export namespace Components {
         "align": string;
         "url": string;
     }
+    interface GhAboutSection {
+        "languages": TLanguage[];
+    }
     interface GhButton {
         "class": string;
     }
     interface GhDropdownButton {
         "buttonName": string;
-        "class": string;
+        "dropdownAlign": string;
         "dropdownSize": string;
     }
     interface GhDropdownModal {
-        "class": string;
         "size": string;
     }
     interface GhFileLine {
@@ -44,14 +46,15 @@ export namespace Components {
         "color": string;
         "type": TIcons;
     }
+    interface GhIconTag {
+        "iconColor": string;
+    }
+    interface GhInput {
+        "placeholder": string;
+        "url": string;
+    }
     interface GhLanguageBar {
-        "languagesList": TLanguage[];
-    }
-    interface GhLanguageDesc {
-        "language": TLanguage1;
-    }
-    interface GhLanguageSection {
-        "languages": TLanguage1[];
+        "languages": TLanguage[];
     }
     interface GhNavItem {
         "class": string;
@@ -60,9 +63,10 @@ export namespace Components {
         "class": string;
         "items": string[];
     }
-    interface GhPackageSection {
+    interface GhSectionElement {
     }
-    interface GhReleaseSection {
+    interface GhSectionList {
+        "sectionNumber": number;
     }
     interface ItemList {
         "delay": number;
@@ -102,6 +106,12 @@ declare global {
         prototype: HTMLGhAElement;
         new (): HTMLGhAElement;
     };
+    interface HTMLGhAboutSectionElement extends Components.GhAboutSection, HTMLStencilElement {
+    }
+    var HTMLGhAboutSectionElement: {
+        prototype: HTMLGhAboutSectionElement;
+        new (): HTMLGhAboutSectionElement;
+    };
     interface HTMLGhButtonElement extends Components.GhButton, HTMLStencilElement {
     }
     var HTMLGhButtonElement: {
@@ -138,23 +148,23 @@ declare global {
         prototype: HTMLGhIconElement;
         new (): HTMLGhIconElement;
     };
+    interface HTMLGhIconTagElement extends Components.GhIconTag, HTMLStencilElement {
+    }
+    var HTMLGhIconTagElement: {
+        prototype: HTMLGhIconTagElement;
+        new (): HTMLGhIconTagElement;
+    };
+    interface HTMLGhInputElement extends Components.GhInput, HTMLStencilElement {
+    }
+    var HTMLGhInputElement: {
+        prototype: HTMLGhInputElement;
+        new (): HTMLGhInputElement;
+    };
     interface HTMLGhLanguageBarElement extends Components.GhLanguageBar, HTMLStencilElement {
     }
     var HTMLGhLanguageBarElement: {
         prototype: HTMLGhLanguageBarElement;
         new (): HTMLGhLanguageBarElement;
-    };
-    interface HTMLGhLanguageDescElement extends Components.GhLanguageDesc, HTMLStencilElement {
-    }
-    var HTMLGhLanguageDescElement: {
-        prototype: HTMLGhLanguageDescElement;
-        new (): HTMLGhLanguageDescElement;
-    };
-    interface HTMLGhLanguageSectionElement extends Components.GhLanguageSection, HTMLStencilElement {
-    }
-    var HTMLGhLanguageSectionElement: {
-        prototype: HTMLGhLanguageSectionElement;
-        new (): HTMLGhLanguageSectionElement;
     };
     interface HTMLGhNavItemElement extends Components.GhNavItem, HTMLStencilElement {
     }
@@ -168,17 +178,17 @@ declare global {
         prototype: HTMLGhNavbarElement;
         new (): HTMLGhNavbarElement;
     };
-    interface HTMLGhPackageSectionElement extends Components.GhPackageSection, HTMLStencilElement {
+    interface HTMLGhSectionElementElement extends Components.GhSectionElement, HTMLStencilElement {
     }
-    var HTMLGhPackageSectionElement: {
-        prototype: HTMLGhPackageSectionElement;
-        new (): HTMLGhPackageSectionElement;
+    var HTMLGhSectionElementElement: {
+        prototype: HTMLGhSectionElementElement;
+        new (): HTMLGhSectionElementElement;
     };
-    interface HTMLGhReleaseSectionElement extends Components.GhReleaseSection, HTMLStencilElement {
+    interface HTMLGhSectionListElement extends Components.GhSectionList, HTMLStencilElement {
     }
-    var HTMLGhReleaseSectionElement: {
-        prototype: HTMLGhReleaseSectionElement;
-        new (): HTMLGhReleaseSectionElement;
+    var HTMLGhSectionListElement: {
+        prototype: HTMLGhSectionListElement;
+        new (): HTMLGhSectionListElement;
     };
     interface HTMLItemListElement extends Components.ItemList, HTMLStencilElement {
     }
@@ -213,19 +223,20 @@ declare global {
     interface HTMLElementTagNameMap {
         "first-comp": HTMLFirstCompElement;
         "gh-a": HTMLGhAElement;
+        "gh-about-section": HTMLGhAboutSectionElement;
         "gh-button": HTMLGhButtonElement;
         "gh-dropdown-button": HTMLGhDropdownButtonElement;
         "gh-dropdown-modal": HTMLGhDropdownModalElement;
         "gh-file-line": HTMLGhFileLineElement;
         "gh-file-list": HTMLGhFileListElement;
         "gh-icon": HTMLGhIconElement;
+        "gh-icon-tag": HTMLGhIconTagElement;
+        "gh-input": HTMLGhInputElement;
         "gh-language-bar": HTMLGhLanguageBarElement;
-        "gh-language-desc": HTMLGhLanguageDescElement;
-        "gh-language-section": HTMLGhLanguageSectionElement;
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
-        "gh-package-section": HTMLGhPackageSectionElement;
-        "gh-release-section": HTMLGhReleaseSectionElement;
+        "gh-section-element": HTMLGhSectionElementElement;
+        "gh-section-list": HTMLGhSectionListElement;
         "item-list": HTMLItemListElement;
         "todo-complete": HTMLTodoCompleteElement;
         "todo-item": HTMLTodoItemElement;
@@ -241,16 +252,18 @@ declare namespace LocalJSX {
         "align"?: string;
         "url"?: string;
     }
+    interface GhAboutSection {
+        "languages"?: TLanguage[];
+    }
     interface GhButton {
         "class"?: string;
     }
     interface GhDropdownButton {
         "buttonName": string;
-        "class"?: string;
+        "dropdownAlign"?: string;
         "dropdownSize"?: string;
     }
     interface GhDropdownModal {
-        "class"?: string;
         "size"?: string;
     }
     interface GhFileLine {
@@ -265,14 +278,15 @@ declare namespace LocalJSX {
         "color"?: string;
         "type"?: TIcons;
     }
+    interface GhIconTag {
+        "iconColor"?: string;
+    }
+    interface GhInput {
+        "placeholder"?: string;
+        "url"?: string;
+    }
     interface GhLanguageBar {
-        "languagesList"?: TLanguage[];
-    }
-    interface GhLanguageDesc {
-        "language"?: TLanguage1;
-    }
-    interface GhLanguageSection {
-        "languages"?: TLanguage1[];
+        "languages"?: TLanguage[];
     }
     interface GhNavItem {
         "class"?: string;
@@ -281,9 +295,10 @@ declare namespace LocalJSX {
         "class"?: string;
         "items"?: string[];
     }
-    interface GhPackageSection {
+    interface GhSectionElement {
     }
-    interface GhReleaseSection {
+    interface GhSectionList {
+        "sectionNumber"?: number;
     }
     interface ItemList {
         "delay"?: number;
@@ -307,19 +322,20 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "first-comp": FirstComp;
         "gh-a": GhA;
+        "gh-about-section": GhAboutSection;
         "gh-button": GhButton;
         "gh-dropdown-button": GhDropdownButton;
         "gh-dropdown-modal": GhDropdownModal;
         "gh-file-line": GhFileLine;
         "gh-file-list": GhFileList;
         "gh-icon": GhIcon;
+        "gh-icon-tag": GhIconTag;
+        "gh-input": GhInput;
         "gh-language-bar": GhLanguageBar;
-        "gh-language-desc": GhLanguageDesc;
-        "gh-language-section": GhLanguageSection;
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
-        "gh-package-section": GhPackageSection;
-        "gh-release-section": GhReleaseSection;
+        "gh-section-element": GhSectionElement;
+        "gh-section-list": GhSectionList;
         "item-list": ItemList;
         "todo-complete": TodoComplete;
         "todo-item": TodoItem;
@@ -333,19 +349,20 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "first-comp": LocalJSX.FirstComp & JSXBase.HTMLAttributes<HTMLFirstCompElement>;
             "gh-a": LocalJSX.GhA & JSXBase.HTMLAttributes<HTMLGhAElement>;
+            "gh-about-section": LocalJSX.GhAboutSection & JSXBase.HTMLAttributes<HTMLGhAboutSectionElement>;
             "gh-button": LocalJSX.GhButton & JSXBase.HTMLAttributes<HTMLGhButtonElement>;
             "gh-dropdown-button": LocalJSX.GhDropdownButton & JSXBase.HTMLAttributes<HTMLGhDropdownButtonElement>;
             "gh-dropdown-modal": LocalJSX.GhDropdownModal & JSXBase.HTMLAttributes<HTMLGhDropdownModalElement>;
             "gh-file-line": LocalJSX.GhFileLine & JSXBase.HTMLAttributes<HTMLGhFileLineElement>;
             "gh-file-list": LocalJSX.GhFileList & JSXBase.HTMLAttributes<HTMLGhFileListElement>;
             "gh-icon": LocalJSX.GhIcon & JSXBase.HTMLAttributes<HTMLGhIconElement>;
+            "gh-icon-tag": LocalJSX.GhIconTag & JSXBase.HTMLAttributes<HTMLGhIconTagElement>;
+            "gh-input": LocalJSX.GhInput & JSXBase.HTMLAttributes<HTMLGhInputElement>;
             "gh-language-bar": LocalJSX.GhLanguageBar & JSXBase.HTMLAttributes<HTMLGhLanguageBarElement>;
-            "gh-language-desc": LocalJSX.GhLanguageDesc & JSXBase.HTMLAttributes<HTMLGhLanguageDescElement>;
-            "gh-language-section": LocalJSX.GhLanguageSection & JSXBase.HTMLAttributes<HTMLGhLanguageSectionElement>;
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
-            "gh-package-section": LocalJSX.GhPackageSection & JSXBase.HTMLAttributes<HTMLGhPackageSectionElement>;
-            "gh-release-section": LocalJSX.GhReleaseSection & JSXBase.HTMLAttributes<HTMLGhReleaseSectionElement>;
+            "gh-section-element": LocalJSX.GhSectionElement & JSXBase.HTMLAttributes<HTMLGhSectionElementElement>;
+            "gh-section-list": LocalJSX.GhSectionList & JSXBase.HTMLAttributes<HTMLGhSectionListElement>;
             "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;
             "todo-complete": LocalJSX.TodoComplete & JSXBase.HTMLAttributes<HTMLTodoCompleteElement>;
             "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;

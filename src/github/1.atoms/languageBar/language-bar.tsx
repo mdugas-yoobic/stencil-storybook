@@ -12,12 +12,12 @@ export type TLanguage = {
   shadow: true
 })
 export class GhLanguageBar {
-  @Prop() languagesList: TLanguage[];
+  @Prop() languages: TLanguage[];
 
   render() {
     return (
       <Host>
-        {this.languagesList.map((language) => (
+        {this.languages.map((language) => (
           <span style={{ width: language.pourcent + '%', background: language.color }}></span>
         ))}
       </Host>

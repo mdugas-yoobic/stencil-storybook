@@ -6,10 +6,9 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class GhDropdownModal {
-  @Prop() class = 'modal';
-  @Prop() size = '';
+  @Prop({ reflect: true }) size = '';
 
   render() {
-    return <div class={this.class + ' ' + this.size}></div>;
+    return <div></div>;
   }
 }

@@ -1,8 +1,8 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'GH/Organisms/Language Section',
-  component: 'gh-language-desc',
+  title: 'GH/Entities/About Section',
+  component: 'gh-about-section',
   parameters: {
     viewmode: 'story'
   }
@@ -14,4 +14,4 @@ const languages = [
   { language: 'PHP', color: '#0a2', pourcent: '30' },
   { language: 'Bash', color: '#9de', pourcent: '1' }
 ];
-export const Basic = () => <gh-language-section languages={languages}></gh-language-section>;
+export const Basic = () => <gh-about-section languages={languages}></gh-about-section>;
