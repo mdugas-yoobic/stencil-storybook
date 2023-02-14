@@ -1,11 +1,11 @@
 import { Component, h, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'gh-dropdown-modal',
-  styleUrl: 'dropdown-modal.css',
+  tag: 'gh-dropdown',
+  styleUrl: 'dropdown.css',
   shadow: true
 })
-export class GhDropdownModal {
+export class GhDropdown {
   @Prop({ reflect: true }) size = '';
 
   render() {

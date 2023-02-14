@@ -2,7 +2,7 @@ import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'gh-section-list',
-  // styleUrl: 'section-list.css',
+  styleUrl: 'section-list.css',
   shadow: true
 })
 export class GhSectionList {

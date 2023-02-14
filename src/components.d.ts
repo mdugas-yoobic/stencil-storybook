@@ -5,11 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { TLanguage } from "./github/1.atoms/languageBar/language-bar";
+import { TLanguage } from "./github/4.templates/about-section/about-section";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TIcons } from "./github/1.atoms/icon/icon";
-import { TLanguage as TLanguage1 } from "./github/1.atoms/languageBar/language-bar";
 import { Item } from "./components/todoItem/todoItem";
 import { Item as Item1 } from "./components/todoItem/todoItem";
 export namespace Components {
@@ -26,13 +25,13 @@ export namespace Components {
     interface GhButton {
         "class": string;
     }
+    interface GhDropdown {
+        "size": string;
+    }
     interface GhDropdownButton {
         "buttonName": string;
         "dropdownAlign": string;
         "dropdownSize": string;
-    }
-    interface GhDropdownModal {
-        "size": string;
     }
     interface GhFileLine {
         "fileData": FileData;
@@ -53,15 +52,16 @@ export namespace Components {
         "placeholder": string;
         "url": string;
     }
-    interface GhLanguageBar {
-        "languages": TLanguage[];
-    }
     interface GhNavItem {
         "class": string;
     }
     interface GhNavbar {
         "class": string;
         "items": string[];
+    }
+    interface GhPourcentageBar {
+        "colors": string[];
+        "pourcentages": number[];
     }
     interface GhSectionElement {
     }
@@ -118,17 +118,17 @@ declare global {
         prototype: HTMLGhButtonElement;
         new (): HTMLGhButtonElement;
     };
+    interface HTMLGhDropdownElement extends Components.GhDropdown, HTMLStencilElement {
+    }
+    var HTMLGhDropdownElement: {
+        prototype: HTMLGhDropdownElement;
+        new (): HTMLGhDropdownElement;
+    };
     interface HTMLGhDropdownButtonElement extends Components.GhDropdownButton, HTMLStencilElement {
     }
     var HTMLGhDropdownButtonElement: {
         prototype: HTMLGhDropdownButtonElement;
         new (): HTMLGhDropdownButtonElement;
-    };
-    interface HTMLGhDropdownModalElement extends Components.GhDropdownModal, HTMLStencilElement {
-    }
-    var HTMLGhDropdownModalElement: {
-        prototype: HTMLGhDropdownModalElement;
-        new (): HTMLGhDropdownModalElement;
     };
     interface HTMLGhFileLineElement extends Components.GhFileLine, HTMLStencilElement {
     }
@@ -160,12 +160,6 @@ declare global {
         prototype: HTMLGhInputElement;
         new (): HTMLGhInputElement;
     };
-    interface HTMLGhLanguageBarElement extends Components.GhLanguageBar, HTMLStencilElement {
-    }
-    var HTMLGhLanguageBarElement: {
-        prototype: HTMLGhLanguageBarElement;
-        new (): HTMLGhLanguageBarElement;
-    };
     interface HTMLGhNavItemElement extends Components.GhNavItem, HTMLStencilElement {
     }
     var HTMLGhNavItemElement: {
@@ -177,6 +171,12 @@ declare global {
     var HTMLGhNavbarElement: {
         prototype: HTMLGhNavbarElement;
         new (): HTMLGhNavbarElement;
+    };
+    interface HTMLGhPourcentageBarElement extends Components.GhPourcentageBar, HTMLStencilElement {
+    }
+    var HTMLGhPourcentageBarElement: {
+        prototype: HTMLGhPourcentageBarElement;
+        new (): HTMLGhPourcentageBarElement;
     };
     interface HTMLGhSectionElementElement extends Components.GhSectionElement, HTMLStencilElement {
     }
@@ -225,16 +225,16 @@ declare global {
         "gh-a": HTMLGhAElement;
         "gh-about-section": HTMLGhAboutSectionElement;
         "gh-button": HTMLGhButtonElement;
+        "gh-dropdown": HTMLGhDropdownElement;
         "gh-dropdown-button": HTMLGhDropdownButtonElement;
-        "gh-dropdown-modal": HTMLGhDropdownModalElement;
         "gh-file-line": HTMLGhFileLineElement;
         "gh-file-list": HTMLGhFileListElement;
         "gh-icon": HTMLGhIconElement;
         "gh-icon-tag": HTMLGhIconTagElement;
         "gh-input": HTMLGhInputElement;
-        "gh-language-bar": HTMLGhLanguageBarElement;
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
+        "gh-pourcentage-bar": HTMLGhPourcentageBarElement;
         "gh-section-element": HTMLGhSectionElementElement;
         "gh-section-list": HTMLGhSectionListElement;
         "item-list": HTMLItemListElement;
@@ -258,13 +258,13 @@ declare namespace LocalJSX {
     interface GhButton {
         "class"?: string;
     }
+    interface GhDropdown {
+        "size"?: string;
+    }
     interface GhDropdownButton {
         "buttonName": string;
         "dropdownAlign"?: string;
         "dropdownSize"?: string;
-    }
-    interface GhDropdownModal {
-        "size"?: string;
     }
     interface GhFileLine {
         "fileData": FileData;
@@ -285,15 +285,16 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "url"?: string;
     }
-    interface GhLanguageBar {
-        "languages"?: TLanguage[];
-    }
     interface GhNavItem {
         "class"?: string;
     }
     interface GhNavbar {
         "class"?: string;
         "items"?: string[];
+    }
+    interface GhPourcentageBar {
+        "colors"?: string[];
+        "pourcentages"?: number[];
     }
     interface GhSectionElement {
     }
@@ -324,16 +325,16 @@ declare namespace LocalJSX {
         "gh-a": GhA;
         "gh-about-section": GhAboutSection;
         "gh-button": GhButton;
+        "gh-dropdown": GhDropdown;
         "gh-dropdown-button": GhDropdownButton;
-        "gh-dropdown-modal": GhDropdownModal;
         "gh-file-line": GhFileLine;
         "gh-file-list": GhFileList;
         "gh-icon": GhIcon;
         "gh-icon-tag": GhIconTag;
         "gh-input": GhInput;
-        "gh-language-bar": GhLanguageBar;
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
+        "gh-pourcentage-bar": GhPourcentageBar;
         "gh-section-element": GhSectionElement;
         "gh-section-list": GhSectionList;
         "item-list": ItemList;
@@ -351,16 +352,16 @@ declare module "@stencil/core" {
             "gh-a": LocalJSX.GhA & JSXBase.HTMLAttributes<HTMLGhAElement>;
             "gh-about-section": LocalJSX.GhAboutSection & JSXBase.HTMLAttributes<HTMLGhAboutSectionElement>;
             "gh-button": LocalJSX.GhButton & JSXBase.HTMLAttributes<HTMLGhButtonElement>;
+            "gh-dropdown": LocalJSX.GhDropdown & JSXBase.HTMLAttributes<HTMLGhDropdownElement>;
             "gh-dropdown-button": LocalJSX.GhDropdownButton & JSXBase.HTMLAttributes<HTMLGhDropdownButtonElement>;
-            "gh-dropdown-modal": LocalJSX.GhDropdownModal & JSXBase.HTMLAttributes<HTMLGhDropdownModalElement>;
             "gh-file-line": LocalJSX.GhFileLine & JSXBase.HTMLAttributes<HTMLGhFileLineElement>;
             "gh-file-list": LocalJSX.GhFileList & JSXBase.HTMLAttributes<HTMLGhFileListElement>;
             "gh-icon": LocalJSX.GhIcon & JSXBase.HTMLAttributes<HTMLGhIconElement>;
             "gh-icon-tag": LocalJSX.GhIconTag & JSXBase.HTMLAttributes<HTMLGhIconTagElement>;
             "gh-input": LocalJSX.GhInput & JSXBase.HTMLAttributes<HTMLGhInputElement>;
-            "gh-language-bar": LocalJSX.GhLanguageBar & JSXBase.HTMLAttributes<HTMLGhLanguageBarElement>;
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
+            "gh-pourcentage-bar": LocalJSX.GhPourcentageBar & JSXBase.HTMLAttributes<HTMLGhPourcentageBarElement>;
             "gh-section-element": LocalJSX.GhSectionElement & JSXBase.HTMLAttributes<HTMLGhSectionElementElement>;
             "gh-section-list": LocalJSX.GhSectionList & JSXBase.HTMLAttributes<HTMLGhSectionListElement>;
             "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;

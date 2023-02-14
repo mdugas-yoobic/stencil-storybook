@@ -21,9 +21,9 @@ export class GhDropdownButton {
       <div>
         <gh-button onClick={this.toggleDropdown.bind(this)}>{this.buttonName}</gh-button>
         {this.showDropdown && (
-          <gh-dropdown-modal class={this.dropdownAlign} size={this.dropdownSize}>
+          <gh-dropdown class={this.dropdownAlign} size={this.dropdownSize}>
             <slot />
-          </gh-dropdown-modal>
+          </gh-dropdown>
         )}
       </div>
     );
