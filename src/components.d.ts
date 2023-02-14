@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { TLanguage } from "./github/4.templates/about-section/about-section";
+import { TRepoData } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TIcons } from "./github/1.atoms/icon/icon";
@@ -21,6 +22,11 @@ export namespace Components {
     }
     interface GhAboutSection {
         "languages": TLanguage[];
+    }
+    interface GhBreadcrumb {
+        "forked": TRepoData;
+        "isPublic": boolean;
+        "repo": TRepoData;
     }
     interface GhButton {
         "class": string;
@@ -115,6 +121,12 @@ declare global {
     var HTMLGhAboutSectionElement: {
         prototype: HTMLGhAboutSectionElement;
         new (): HTMLGhAboutSectionElement;
+    };
+    interface HTMLGhBreadcrumbElement extends Components.GhBreadcrumb, HTMLStencilElement {
+    }
+    var HTMLGhBreadcrumbElement: {
+        prototype: HTMLGhBreadcrumbElement;
+        new (): HTMLGhBreadcrumbElement;
     };
     interface HTMLGhButtonElement extends Components.GhButton, HTMLStencilElement {
     }
@@ -234,6 +246,7 @@ declare global {
         "first-comp": HTMLFirstCompElement;
         "gh-a": HTMLGhAElement;
         "gh-about-section": HTMLGhAboutSectionElement;
+        "gh-breadcrumb": HTMLGhBreadcrumbElement;
         "gh-button": HTMLGhButtonElement;
         "gh-dropdown": HTMLGhDropdownElement;
         "gh-dropdown-button": HTMLGhDropdownButtonElement;
@@ -265,6 +278,11 @@ declare namespace LocalJSX {
     }
     interface GhAboutSection {
         "languages"?: TLanguage[];
+    }
+    interface GhBreadcrumb {
+        "forked"?: TRepoData;
+        "isPublic"?: boolean;
+        "repo"?: TRepoData;
     }
     interface GhButton {
         "class"?: string;
@@ -339,6 +357,7 @@ declare namespace LocalJSX {
         "first-comp": FirstComp;
         "gh-a": GhA;
         "gh-about-section": GhAboutSection;
+        "gh-breadcrumb": GhBreadcrumb;
         "gh-button": GhButton;
         "gh-dropdown": GhDropdown;
         "gh-dropdown-button": GhDropdownButton;
@@ -367,6 +386,7 @@ declare module "@stencil/core" {
             "first-comp": LocalJSX.FirstComp & JSXBase.HTMLAttributes<HTMLFirstCompElement>;
             "gh-a": LocalJSX.GhA & JSXBase.HTMLAttributes<HTMLGhAElement>;
             "gh-about-section": LocalJSX.GhAboutSection & JSXBase.HTMLAttributes<HTMLGhAboutSectionElement>;
+            "gh-breadcrumb": LocalJSX.GhBreadcrumb & JSXBase.HTMLAttributes<HTMLGhBreadcrumbElement>;
             "gh-button": LocalJSX.GhButton & JSXBase.HTMLAttributes<HTMLGhButtonElement>;
             "gh-dropdown": LocalJSX.GhDropdown & JSXBase.HTMLAttributes<HTMLGhDropdownElement>;
             "gh-dropdown-button": LocalJSX.GhDropdownButton & JSXBase.HTMLAttributes<HTMLGhDropdownButtonElement>;
