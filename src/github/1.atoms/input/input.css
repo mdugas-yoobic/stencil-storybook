@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  width: 200px;
+  border: 1px solid #596069;
+  border-radius: 4px;
+  background: black;
+  padding-left: 5px;
+  height: 30px;
+  transition: width 200ms, background-color 100ms;
+}
+
+input,
+input:focus {
+  width: 100%;
+  background: none;
+  color: #aaa;
+  outline: none;
+  border: none;
+}
+
+div:has(input:focus) {
+  background: white;
+  max-width: 300px;
+  width: 300px;
+}

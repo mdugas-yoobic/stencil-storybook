@@ -41,6 +41,10 @@ export namespace Components {
     interface GhFileList {
         "repoData": repoData;
     }
+    interface GhHeader {
+        "items": string[];
+        "placeholder": string;
+    }
     interface GhIcon {
         "color": string;
         "type": TIcons;
@@ -142,6 +146,12 @@ declare global {
         prototype: HTMLGhFileListElement;
         new (): HTMLGhFileListElement;
     };
+    interface HTMLGhHeaderElement extends Components.GhHeader, HTMLStencilElement {
+    }
+    var HTMLGhHeaderElement: {
+        prototype: HTMLGhHeaderElement;
+        new (): HTMLGhHeaderElement;
+    };
     interface HTMLGhIconElement extends Components.GhIcon, HTMLStencilElement {
     }
     var HTMLGhIconElement: {
@@ -229,6 +239,7 @@ declare global {
         "gh-dropdown-button": HTMLGhDropdownButtonElement;
         "gh-file-line": HTMLGhFileLineElement;
         "gh-file-list": HTMLGhFileListElement;
+        "gh-header": HTMLGhHeaderElement;
         "gh-icon": HTMLGhIconElement;
         "gh-icon-tag": HTMLGhIconTagElement;
         "gh-input": HTMLGhInputElement;
@@ -273,6 +284,10 @@ declare namespace LocalJSX {
     }
     interface GhFileList {
         "repoData": repoData;
+    }
+    interface GhHeader {
+        "items"?: string[];
+        "placeholder"?: string;
     }
     interface GhIcon {
         "color"?: string;
@@ -329,6 +344,7 @@ declare namespace LocalJSX {
         "gh-dropdown-button": GhDropdownButton;
         "gh-file-line": GhFileLine;
         "gh-file-list": GhFileList;
+        "gh-header": GhHeader;
         "gh-icon": GhIcon;
         "gh-icon-tag": GhIconTag;
         "gh-input": GhInput;
@@ -356,6 +372,7 @@ declare module "@stencil/core" {
             "gh-dropdown-button": LocalJSX.GhDropdownButton & JSXBase.HTMLAttributes<HTMLGhDropdownButtonElement>;
             "gh-file-line": LocalJSX.GhFileLine & JSXBase.HTMLAttributes<HTMLGhFileLineElement>;
             "gh-file-list": LocalJSX.GhFileList & JSXBase.HTMLAttributes<HTMLGhFileListElement>;
+            "gh-header": LocalJSX.GhHeader & JSXBase.HTMLAttributes<HTMLGhHeaderElement>;
             "gh-icon": LocalJSX.GhIcon & JSXBase.HTMLAttributes<HTMLGhIconElement>;
             "gh-icon-tag": LocalJSX.GhIconTag & JSXBase.HTMLAttributes<HTMLGhIconTagElement>;
             "gh-input": LocalJSX.GhInput & JSXBase.HTMLAttributes<HTMLGhInputElement>;
