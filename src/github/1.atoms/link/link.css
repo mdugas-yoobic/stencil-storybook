@@ -3,11 +3,14 @@
   justify-content: center;
   align-items: center;
   margin: 5px;
+  overflow: hidden;
 }
 
 a {
   text-decoration: none;
-  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 a:link,
