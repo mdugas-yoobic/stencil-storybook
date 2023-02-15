@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import React from 'react';
 
 export default {
-  title: 'Todo Complete',
+  title: 'Old/Todo Complete',
   component: 'todo-complete',
   parameters: {
     viewmode: 'story'

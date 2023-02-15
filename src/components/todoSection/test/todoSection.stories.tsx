@@ -1,12 +1,11 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'Todo Section',
+  title: 'Old/Todo Section',
   component: 'todo-section',
   parameters: {
     viewmode: 'story'
   }
 };
 
-export const List = () => <todo-section ></todo-section>;
-
+export const List = () => <todo-section></todo-section>;

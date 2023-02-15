@@ -1,7 +1,7 @@
 import { h } from '@stencil/core';
 
 export default {
-  title: 'Button',
+  title: 'Old/Button',
   component: 'button-comp',
   parameters: {
     viewmode: 'story'

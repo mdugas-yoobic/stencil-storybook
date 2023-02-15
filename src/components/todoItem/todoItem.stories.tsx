@@ -2,7 +2,7 @@ import { h } from '@stencil/core';
 import React from 'react';
 
 export default {
-  title: 'Todo Item',
+  title: 'Old/Todo Item',
   component: 'item-list',
   parameters: {
     viewmode: 'story'
