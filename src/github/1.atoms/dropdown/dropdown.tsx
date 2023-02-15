@@ -9,6 +9,6 @@ export class GhDropdown {
   @Prop({ reflect: true }) size = '';
 
   render() {
-    return <div></div>;
+    return <slot />;
   }
 }

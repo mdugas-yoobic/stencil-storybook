@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'gh-section-list',
@@ -16,6 +16,6 @@ export class GhSectionList {
       }
       slots.push(<slot name={index.toString()} />);
     }
-    return <aside>{slots}</aside>;
+    return <Host>{slots}</Host>;
   }
 }

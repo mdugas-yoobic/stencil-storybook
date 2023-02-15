@@ -95,7 +95,6 @@ export namespace Components {
         "sectionNumber": number;
     }
     interface GhTabItem {
-        "index": number;
     }
     interface GhTabbar {
         "items": string[];
@@ -116,10 +115,6 @@ export namespace Components {
     interface XButton {
         "enable": boolean;
     }
-}
-export interface GhTabItemCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLGhTabItemElement;
 }
 export interface TodoItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -417,8 +412,6 @@ declare namespace LocalJSX {
         "sectionNumber"?: number;
     }
     interface GhTabItem {
-        "index": number;
-        "onTabItemClicked"?: (event: GhTabItemCustomEvent<number>) => void;
     }
     interface GhTabbar {
         "items"?: string[];

@@ -25,7 +25,7 @@ export class GhDropdownButton {
         </gh-button>
         {this.showDropdown && (
           <gh-dropdown class={this.dropdownAlign} size={this.dropdownSize}>
-            <slot />
+            <p>Test test</p>
           </gh-dropdown>
         )}
       </div>

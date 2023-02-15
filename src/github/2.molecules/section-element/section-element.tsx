@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'gh-section-element',
-  // styleUrl: 'section-element.css',
+  styleUrl: 'section-element.css',
   shadow: true
 })
 export class GhSectionElement {

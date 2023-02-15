@@ -6,6 +6,7 @@ button {
   border-radius: 7px;
   margin: 5px;
   padding: 5px;
+  font-family: sans-serif;
 }
 
 button:hover {

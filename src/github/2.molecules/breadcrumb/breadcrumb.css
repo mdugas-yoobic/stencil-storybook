@@ -2,6 +2,7 @@ h2,
 p {
   display: flex;
   align-items: baseline;
+  font-family: sans-serif;
 }
 
 h2.public::after {

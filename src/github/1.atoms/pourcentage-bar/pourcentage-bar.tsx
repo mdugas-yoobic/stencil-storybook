@@ -10,8 +10,6 @@ export class GhPourcentageBar {
   @Prop() colors: string[];
 
   render() {
-    console.log(this.pourcentages);
-    console.log(this.colors);
     return (
       <Host>
         {this.pourcentages.map((pourcentage, index) => (

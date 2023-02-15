@@ -3,11 +3,14 @@
 }
 
 footer {
+  height: 100px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 span {
+  font-family: sans-serif;
   color: #596069;
 }
