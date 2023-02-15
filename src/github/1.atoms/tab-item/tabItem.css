@@ -1,5 +1,5 @@
 a {
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
   border-radius: 7px;
   color: black;
@@ -8,7 +8,7 @@ a {
 }
 
 a:hover {
-  background-color: #eee;
+  background-color: #eaedf1;
   transition: background-color 200ms;
 }
 

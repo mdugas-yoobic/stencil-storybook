@@ -1,4 +1,6 @@
 button {
+  display: flex;
+  align-items: baseline;
   background-color: #f6f8fa;
   border: 1px solid #d3d4d6;
   border-radius: 7px;

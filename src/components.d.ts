@@ -10,6 +10,7 @@ import { TRepoData } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TIcons } from "./github/1.atoms/icon/icon";
+import { TRepoData as TRepoData1 } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { repoData as repoData1 } from "./github/3.organisms/file-list/file-list";
 import { Item } from "./components/todoItem/todoItem";
 import { Item as Item1 } from "./components/todoItem/todoItem";
@@ -66,6 +67,11 @@ export namespace Components {
     interface GhInput {
         "placeholder": string;
         "url": string;
+    }
+    interface GhMainHeader {
+        "forked": TRepoData1;
+        "repoData": TRepoData1;
+        "tabbarItems": string[];
     }
     interface GhMainSection {
         "items": string[];
@@ -206,6 +212,12 @@ declare global {
         prototype: HTMLGhInputElement;
         new (): HTMLGhInputElement;
     };
+    interface HTMLGhMainHeaderElement extends Components.GhMainHeader, HTMLStencilElement {
+    }
+    var HTMLGhMainHeaderElement: {
+        prototype: HTMLGhMainHeaderElement;
+        new (): HTMLGhMainHeaderElement;
+    };
     interface HTMLGhMainSectionElement extends Components.GhMainSection, HTMLStencilElement {
     }
     var HTMLGhMainSectionElement: {
@@ -299,6 +311,7 @@ declare global {
         "gh-icon": HTMLGhIconElement;
         "gh-icon-tag": HTMLGhIconTagElement;
         "gh-input": HTMLGhInputElement;
+        "gh-main-header": HTMLGhMainHeaderElement;
         "gh-main-section": HTMLGhMainSectionElement;
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
@@ -368,6 +381,11 @@ declare namespace LocalJSX {
         "placeholder"?: string;
         "url"?: string;
     }
+    interface GhMainHeader {
+        "forked"?: TRepoData1;
+        "repoData"?: TRepoData1;
+        "tabbarItems"?: string[];
+    }
     interface GhMainSection {
         "items"?: string[];
         "repoData"?: repoData1;
@@ -428,6 +446,7 @@ declare namespace LocalJSX {
         "gh-icon": GhIcon;
         "gh-icon-tag": GhIconTag;
         "gh-input": GhInput;
+        "gh-main-header": GhMainHeader;
         "gh-main-section": GhMainSection;
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
@@ -461,6 +480,7 @@ declare module "@stencil/core" {
             "gh-icon": LocalJSX.GhIcon & JSXBase.HTMLAttributes<HTMLGhIconElement>;
             "gh-icon-tag": LocalJSX.GhIconTag & JSXBase.HTMLAttributes<HTMLGhIconTagElement>;
             "gh-input": LocalJSX.GhInput & JSXBase.HTMLAttributes<HTMLGhInputElement>;
+            "gh-main-header": LocalJSX.GhMainHeader & JSXBase.HTMLAttributes<HTMLGhMainHeaderElement>;
             "gh-main-section": LocalJSX.GhMainSection & JSXBase.HTMLAttributes<HTMLGhMainSectionElement>;
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
