@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'gh-nav-item',
@@ -6,11 +6,9 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true
 })
 export class GhNavItem {
-  @Prop() class: string;
-
   render() {
     return (
-      <a href="#" class={this.class}>
+      <a href="#">
         <slot />
       </a>
     );

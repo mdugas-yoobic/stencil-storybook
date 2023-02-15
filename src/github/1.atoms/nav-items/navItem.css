@@ -10,12 +10,12 @@ a:hover {
   background-color: #eee;
 }
 
-.inverted {
+:host(.inverted) a {
   color: white;
   background-color: black;
 }
 
-.inverted:hover {
+:host(.inverted) a:hover {
   color: #bbb;
   background-color: black;
 }

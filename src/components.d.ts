@@ -72,7 +72,6 @@ export namespace Components {
         "repoData": repoData1;
     }
     interface GhNavItem {
-        "class": string;
     }
     interface GhNavbar {
         "class": string;
@@ -86,6 +85,12 @@ export namespace Components {
     }
     interface GhSectionList {
         "sectionNumber": number;
+    }
+    interface GhTabItem {
+        "index": number;
+    }
+    interface GhTabbar {
+        "items": string[];
     }
     interface ItemList {
         "delay": number;
@@ -103,6 +108,10 @@ export namespace Components {
     interface XButton {
         "enable": boolean;
     }
+}
+export interface GhTabItemCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLGhTabItemElement;
 }
 export interface TodoItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -233,6 +242,18 @@ declare global {
         prototype: HTMLGhSectionListElement;
         new (): HTMLGhSectionListElement;
     };
+    interface HTMLGhTabItemElement extends Components.GhTabItem, HTMLStencilElement {
+    }
+    var HTMLGhTabItemElement: {
+        prototype: HTMLGhTabItemElement;
+        new (): HTMLGhTabItemElement;
+    };
+    interface HTMLGhTabbarElement extends Components.GhTabbar, HTMLStencilElement {
+    }
+    var HTMLGhTabbarElement: {
+        prototype: HTMLGhTabbarElement;
+        new (): HTMLGhTabbarElement;
+    };
     interface HTMLItemListElement extends Components.ItemList, HTMLStencilElement {
     }
     var HTMLItemListElement: {
@@ -284,6 +305,8 @@ declare global {
         "gh-pourcentage-bar": HTMLGhPourcentageBarElement;
         "gh-section-element": HTMLGhSectionElementElement;
         "gh-section-list": HTMLGhSectionListElement;
+        "gh-tab-item": HTMLGhTabItemElement;
+        "gh-tabbar": HTMLGhTabbarElement;
         "item-list": HTMLItemListElement;
         "todo-complete": HTMLTodoCompleteElement;
         "todo-item": HTMLTodoItemElement;
@@ -350,7 +373,6 @@ declare namespace LocalJSX {
         "repoData"?: repoData1;
     }
     interface GhNavItem {
-        "class"?: string;
     }
     interface GhNavbar {
         "class"?: string;
@@ -364,6 +386,13 @@ declare namespace LocalJSX {
     }
     interface GhSectionList {
         "sectionNumber"?: number;
+    }
+    interface GhTabItem {
+        "index": number;
+        "onTabItemClicked"?: (event: GhTabItemCustomEvent<number>) => void;
+    }
+    interface GhTabbar {
+        "items"?: string[];
     }
     interface ItemList {
         "delay"?: number;
@@ -405,6 +434,8 @@ declare namespace LocalJSX {
         "gh-pourcentage-bar": GhPourcentageBar;
         "gh-section-element": GhSectionElement;
         "gh-section-list": GhSectionList;
+        "gh-tab-item": GhTabItem;
+        "gh-tabbar": GhTabbar;
         "item-list": ItemList;
         "todo-complete": TodoComplete;
         "todo-item": TodoItem;
@@ -436,6 +467,8 @@ declare module "@stencil/core" {
             "gh-pourcentage-bar": LocalJSX.GhPourcentageBar & JSXBase.HTMLAttributes<HTMLGhPourcentageBarElement>;
             "gh-section-element": LocalJSX.GhSectionElement & JSXBase.HTMLAttributes<HTMLGhSectionElementElement>;
             "gh-section-list": LocalJSX.GhSectionList & JSXBase.HTMLAttributes<HTMLGhSectionListElement>;
+            "gh-tab-item": LocalJSX.GhTabItem & JSXBase.HTMLAttributes<HTMLGhTabItemElement>;
+            "gh-tabbar": LocalJSX.GhTabbar & JSXBase.HTMLAttributes<HTMLGhTabbarElement>;
             "item-list": LocalJSX.ItemList & JSXBase.HTMLAttributes<HTMLItemListElement>;
             "todo-complete": LocalJSX.TodoComplete & JSXBase.HTMLAttributes<HTMLTodoCompleteElement>;
             "todo-item": LocalJSX.TodoItem & JSXBase.HTMLAttributes<HTMLTodoItemElement>;

@@ -1,0 +1,27 @@
+a {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 7px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover {
+  background-color: #eee;
+  transition: background-color 200ms;
+}
+
+hr {
+  display: none;
+}
+
+:host(.selected) hr {
+  display: block;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  height: 2px;
+  background-color: #e97;
+  border: none;
+}
