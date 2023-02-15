@@ -23,7 +23,7 @@ export class GhMainSection {
             <gh-a>0 tags</gh-a>
           </div>
           <div class={'right'}>
-            <gh-a>Go to file</gh-a>
+            <gh-a class={'button'}>Go to file</gh-a>
             <gh-dropdown-button dropdownSize={'small'} buttonName={'Add file ↓'} dropdownAlign={'align-right'}>
               Switch branch
             </gh-dropdown-button>

@@ -27,6 +27,13 @@ a:active {
   justify-content: flex-start;
 }
 
+:host(.button) a {
+  padding: 2px 5px;
+  background-color: #f6f8fa;
+  border: 1px solid #d3d4d6;
+  border-radius: 7px;
+}
+
 :host(.underline) a:hover {
   text-decoration: underline;
 }
@@ -35,4 +42,13 @@ a:active {
 :host(.blue) a:link,
 :host(.blue) a:visited {
   color: #2e67d3;
+}
+
+:host(.button) a:hover {
+  color: black;
+}
+
+:host(.button) a:active {
+  color: black;
+  background-color: #ebecef;
 }

@@ -18,5 +18,8 @@ export const Basic = () => (
     <gh-a url={'https://google.fr'} class={'blue'}>
       Blue Link
     </gh-a>
+    <gh-a url={'https://google.fr'} class={'button'}>
+      Blue Link
+    </gh-a>
   </div>
 );
