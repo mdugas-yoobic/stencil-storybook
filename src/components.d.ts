@@ -87,6 +87,8 @@ export namespace Components {
         "colors": string[];
         "pourcentages": number[];
     }
+    interface GhRepoPage {
+    }
     interface GhSectionElement {
     }
     interface GhSectionList {
@@ -242,6 +244,12 @@ declare global {
         prototype: HTMLGhPourcentageBarElement;
         new (): HTMLGhPourcentageBarElement;
     };
+    interface HTMLGhRepoPageElement extends Components.GhRepoPage, HTMLStencilElement {
+    }
+    var HTMLGhRepoPageElement: {
+        prototype: HTMLGhRepoPageElement;
+        new (): HTMLGhRepoPageElement;
+    };
     interface HTMLGhSectionElementElement extends Components.GhSectionElement, HTMLStencilElement {
     }
     var HTMLGhSectionElementElement: {
@@ -316,6 +324,7 @@ declare global {
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
         "gh-pourcentage-bar": HTMLGhPourcentageBarElement;
+        "gh-repo-page": HTMLGhRepoPageElement;
         "gh-section-element": HTMLGhSectionElementElement;
         "gh-section-list": HTMLGhSectionListElement;
         "gh-tab-item": HTMLGhTabItemElement;
@@ -400,6 +409,8 @@ declare namespace LocalJSX {
         "colors"?: string[];
         "pourcentages"?: number[];
     }
+    interface GhRepoPage {
+    }
     interface GhSectionElement {
     }
     interface GhSectionList {
@@ -451,6 +462,7 @@ declare namespace LocalJSX {
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
         "gh-pourcentage-bar": GhPourcentageBar;
+        "gh-repo-page": GhRepoPage;
         "gh-section-element": GhSectionElement;
         "gh-section-list": GhSectionList;
         "gh-tab-item": GhTabItem;
@@ -485,6 +497,7 @@ declare module "@stencil/core" {
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
             "gh-pourcentage-bar": LocalJSX.GhPourcentageBar & JSXBase.HTMLAttributes<HTMLGhPourcentageBarElement>;
+            "gh-repo-page": LocalJSX.GhRepoPage & JSXBase.HTMLAttributes<HTMLGhRepoPageElement>;
             "gh-section-element": LocalJSX.GhSectionElement & JSXBase.HTMLAttributes<HTMLGhSectionElementElement>;
             "gh-section-list": LocalJSX.GhSectionList & JSXBase.HTMLAttributes<HTMLGhSectionListElement>;
             "gh-tab-item": LocalJSX.GhTabItem & JSXBase.HTMLAttributes<HTMLGhTabItemElement>;

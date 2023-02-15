@@ -21,5 +21,9 @@ export const Basic = () => (
     <gh-a url={'https://google.fr'} class={'button'}>
       Blue Link
     </gh-a>
+    <gh-a url={'https://google.fr'}>
+      <gh-icon type={'small-circle'}></gh-icon>
+      Icon Link
+    </gh-a>
   </div>
 );
