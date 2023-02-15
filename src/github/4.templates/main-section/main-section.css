@@ -1,0 +1,20 @@
+header {
+  display: grid;
+  grid-column: 1fr 1fr;
+  max-width: 700px;
+}
+
+div.left {
+  grid-column: 1;
+  display: flex;
+}
+
+div.right {
+  grid-column: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.left:last-child {
+  justify-self: flex-end;
+}

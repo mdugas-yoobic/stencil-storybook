@@ -2,7 +2,7 @@ li {
   display: grid;
   list-style-type: none;
   height: 30px;
-  width: 700px;
+  max-width: 700px;
   grid-template-columns: 40px 2fr 4fr 100px;
   border-style: solid;
   border-color: #aaa;

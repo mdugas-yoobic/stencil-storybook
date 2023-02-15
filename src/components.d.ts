@@ -10,6 +10,7 @@ import { TRepoData } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TIcons } from "./github/1.atoms/icon/icon";
+import { repoData as repoData1 } from "./github/3.organisms/file-list/file-list";
 import { Item } from "./components/todoItem/todoItem";
 import { Item as Item1 } from "./components/todoItem/todoItem";
 export namespace Components {
@@ -35,6 +36,7 @@ export namespace Components {
         "size": string;
     }
     interface GhDropdownButton {
+        "buttonClass": string;
         "buttonName": string;
         "dropdownAlign": string;
         "dropdownSize": string;
@@ -46,6 +48,9 @@ export namespace Components {
     }
     interface GhFileList {
         "repoData": repoData;
+    }
+    interface GhFooter {
+        "items": string[];
     }
     interface GhHeader {
         "items": string[];
@@ -61,6 +66,10 @@ export namespace Components {
     interface GhInput {
         "placeholder": string;
         "url": string;
+    }
+    interface GhMainSection {
+        "items": string[];
+        "repoData": repoData1;
     }
     interface GhNavItem {
         "class": string;
@@ -158,6 +167,12 @@ declare global {
         prototype: HTMLGhFileListElement;
         new (): HTMLGhFileListElement;
     };
+    interface HTMLGhFooterElement extends Components.GhFooter, HTMLStencilElement {
+    }
+    var HTMLGhFooterElement: {
+        prototype: HTMLGhFooterElement;
+        new (): HTMLGhFooterElement;
+    };
     interface HTMLGhHeaderElement extends Components.GhHeader, HTMLStencilElement {
     }
     var HTMLGhHeaderElement: {
@@ -181,6 +196,12 @@ declare global {
     var HTMLGhInputElement: {
         prototype: HTMLGhInputElement;
         new (): HTMLGhInputElement;
+    };
+    interface HTMLGhMainSectionElement extends Components.GhMainSection, HTMLStencilElement {
+    }
+    var HTMLGhMainSectionElement: {
+        prototype: HTMLGhMainSectionElement;
+        new (): HTMLGhMainSectionElement;
     };
     interface HTMLGhNavItemElement extends Components.GhNavItem, HTMLStencilElement {
     }
@@ -252,10 +273,12 @@ declare global {
         "gh-dropdown-button": HTMLGhDropdownButtonElement;
         "gh-file-line": HTMLGhFileLineElement;
         "gh-file-list": HTMLGhFileListElement;
+        "gh-footer": HTMLGhFooterElement;
         "gh-header": HTMLGhHeaderElement;
         "gh-icon": HTMLGhIconElement;
         "gh-icon-tag": HTMLGhIconTagElement;
         "gh-input": HTMLGhInputElement;
+        "gh-main-section": HTMLGhMainSectionElement;
         "gh-nav-item": HTMLGhNavItemElement;
         "gh-navbar": HTMLGhNavbarElement;
         "gh-pourcentage-bar": HTMLGhPourcentageBarElement;
@@ -291,6 +314,7 @@ declare namespace LocalJSX {
         "size"?: string;
     }
     interface GhDropdownButton {
+        "buttonClass"?: string;
         "buttonName": string;
         "dropdownAlign"?: string;
         "dropdownSize"?: string;
@@ -302,6 +326,9 @@ declare namespace LocalJSX {
     }
     interface GhFileList {
         "repoData": repoData;
+    }
+    interface GhFooter {
+        "items"?: string[];
     }
     interface GhHeader {
         "items"?: string[];
@@ -317,6 +344,10 @@ declare namespace LocalJSX {
     interface GhInput {
         "placeholder"?: string;
         "url"?: string;
+    }
+    interface GhMainSection {
+        "items"?: string[];
+        "repoData"?: repoData1;
     }
     interface GhNavItem {
         "class"?: string;
@@ -363,10 +394,12 @@ declare namespace LocalJSX {
         "gh-dropdown-button": GhDropdownButton;
         "gh-file-line": GhFileLine;
         "gh-file-list": GhFileList;
+        "gh-footer": GhFooter;
         "gh-header": GhHeader;
         "gh-icon": GhIcon;
         "gh-icon-tag": GhIconTag;
         "gh-input": GhInput;
+        "gh-main-section": GhMainSection;
         "gh-nav-item": GhNavItem;
         "gh-navbar": GhNavbar;
         "gh-pourcentage-bar": GhPourcentageBar;
@@ -392,10 +425,12 @@ declare module "@stencil/core" {
             "gh-dropdown-button": LocalJSX.GhDropdownButton & JSXBase.HTMLAttributes<HTMLGhDropdownButtonElement>;
             "gh-file-line": LocalJSX.GhFileLine & JSXBase.HTMLAttributes<HTMLGhFileLineElement>;
             "gh-file-list": LocalJSX.GhFileList & JSXBase.HTMLAttributes<HTMLGhFileListElement>;
+            "gh-footer": LocalJSX.GhFooter & JSXBase.HTMLAttributes<HTMLGhFooterElement>;
             "gh-header": LocalJSX.GhHeader & JSXBase.HTMLAttributes<HTMLGhHeaderElement>;
             "gh-icon": LocalJSX.GhIcon & JSXBase.HTMLAttributes<HTMLGhIconElement>;
             "gh-icon-tag": LocalJSX.GhIconTag & JSXBase.HTMLAttributes<HTMLGhIconTagElement>;
             "gh-input": LocalJSX.GhInput & JSXBase.HTMLAttributes<HTMLGhInputElement>;
+            "gh-main-section": LocalJSX.GhMainSection & JSXBase.HTMLAttributes<HTMLGhMainSectionElement>;
             "gh-nav-item": LocalJSX.GhNavItem & JSXBase.HTMLAttributes<HTMLGhNavItemElement>;
             "gh-navbar": LocalJSX.GhNavbar & JSXBase.HTMLAttributes<HTMLGhNavbarElement>;
             "gh-pourcentage-bar": LocalJSX.GhPourcentageBar & JSXBase.HTMLAttributes<HTMLGhPourcentageBarElement>;

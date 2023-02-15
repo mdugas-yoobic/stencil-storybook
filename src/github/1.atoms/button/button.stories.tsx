@@ -11,5 +11,6 @@ export default {
 export const Basic = () => (
   <div>
     <gh-button>Normal</gh-button>
+    <gh-button class={'green'}>Green</gh-button>
   </div>
 );

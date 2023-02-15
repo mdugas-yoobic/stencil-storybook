@@ -5,7 +5,7 @@ ul {
 
 li {
   height: 60px;
-  width: 700px;
+  max-width: 700px;
   background: #f6f8fa;
   border: 1px solid #aaa;
   border-radius: 7px 7px 0 0;

@@ -13,3 +13,16 @@ button:hover {
 button:active {
   background-color: #ebecef;
 }
+
+:host(.green) button {
+  background: #53a258;
+  color: white;
+}
+
+:host(.green) button:hover {
+  background: #4e9553;
+}
+
+:host(.green) button:active {
+  background: #498c4e;
+}

@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+footer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+span {
+  color: #596069;
+}

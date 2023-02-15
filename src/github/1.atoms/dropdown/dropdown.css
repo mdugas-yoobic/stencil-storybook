@@ -4,7 +4,7 @@ div {
   position: absolute;
   z-index: 100;
   background-color: #f55;
-  animation: show-modal 1s ease-out;
+  animation: show-modal 300ms ease-out;
 }
 
 :host([size='small']) div {

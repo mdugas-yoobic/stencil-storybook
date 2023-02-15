@@ -10,7 +10,7 @@ export class GhButton {
 
   render() {
     return (
-      <button class={this.class}>
+      <button>
         <slot />
       </button>
     );
