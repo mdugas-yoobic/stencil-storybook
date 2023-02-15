@@ -1,4 +1,4 @@
-import { Component, h, Prop, State } from '@stencil/core';
+import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'gh-dropdown-button',
@@ -13,8 +13,17 @@ export class GhDropdownButton {
   @Prop() dropdownAlign = 'align-left';
   @State() showDropdown = false;
 
+  @Element() dropdown: HTMLElement;
+
   toggleDropdown() {
     this.showDropdown = !this.showDropdown;
+  }
+
+  @Listen('click', { target: 'document' })
+  outsideClick(event: MouseEvent) {
+    if (this.showDropdown && !event.composedPath().includes(this.dropdown)) {
+      this.showDropdown = false;
+    }
   }
 
   render() {
