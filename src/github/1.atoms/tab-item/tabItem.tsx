@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, h, Prop } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'gh-tab-item',
