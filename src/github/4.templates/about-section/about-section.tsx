@@ -22,13 +22,13 @@ export class GhAboutSection {
           <p slot={'main'}>
             No description, website, or topic provided.
             <gh-a class={'align-left'}>
-              <gh-icon type="small-circle" color={'#596069'}></gh-icon>0 stars
+              <gh-icon type={'far fa-star'} color={'#596069'}></gh-icon>0 stars
             </gh-a>
             <gh-a class={'align-left'}>
-              <gh-icon type="small-circle" color={'#596069'}></gh-icon>0 watching
+              <gh-icon type={'far fa-eye'} color={'#596069'}></gh-icon>0 watching
             </gh-a>
             <gh-a class={'align-left'}>
-              <gh-icon type="small-circle" color={'#596069'}></gh-icon>2 forks
+              <gh-icon type={'fas fa-code-branch medium'} color={'#596069'}></gh-icon> 2 forks
             </gh-a>
           </p>
         </gh-section-element>

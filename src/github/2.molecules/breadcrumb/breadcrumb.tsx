@@ -27,6 +27,7 @@ export class GhBreadcrumb {
     return (
       <Host>
         <h2 class={this.isPublic ? 'public' : ''}>
+          <gh-icon type={'fas fa-code-branch medium'} color={'#596069'}></gh-icon>
           <gh-a class={'blue underline'}>{this.repo.folder}</gh-a>/<gh-a class={'blue underline'}>{this.repo.name}</gh-a>
         </h2>
         {forked}

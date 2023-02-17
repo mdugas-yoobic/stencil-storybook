@@ -22,7 +22,7 @@ export const Basic = () => (
       Blue Link
     </gh-a>
     <gh-a url={'https://google.fr'}>
-      <gh-icon type={'small-circle'}></gh-icon>
+      <gh-icon type={'fas fa-code-branch medium'} color={'red'}></gh-icon>
       Icon Link
     </gh-a>
   </div>

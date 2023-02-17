@@ -12,6 +12,9 @@ export const Basic = () => (
   <div>
     <gh-tab-item class={'selected'}>Selected</gh-tab-item>
     <gh-tab-item>Not selected</gh-tab-item>
-    <gh-tab-item>Not selected 2</gh-tab-item>
+    <gh-tab-item>
+      {' '}
+      <gh-icon type="fas fa-code"></gh-icon> Not selected 2
+    </gh-tab-item>
   </div>
 );

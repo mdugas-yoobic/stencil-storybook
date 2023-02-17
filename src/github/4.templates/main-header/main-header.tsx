@@ -19,7 +19,7 @@ export class GhMainHeader {
           <gh-breadcrumb repo={this.repoData} forked={this.forked}></gh-breadcrumb>
           <div>
             <gh-button>
-              <gh-icon type={'small-circle'} color={'#aaaa'}></gh-icon>Pin
+              <gh-icon type={'fas fa-thumbtack'} color={'#596069'}></gh-icon>Pin
             </gh-button>
             <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Watch ↓'} dropdownSize={'large'}></gh-dropdown-button>
             <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Fork ↓'} dropdownSize={'small'}></gh-dropdown-button>

@@ -19,8 +19,14 @@ export class GhMainSection {
             <gh-dropdown-button dropdownSize={'small'} buttonName={'master ↓'} dropdownAlign={'align-left'}>
               Switch branch
             </gh-dropdown-button>
-            <gh-a>1 branch</gh-a>
-            <gh-a>0 tags</gh-a>
+            <gh-a>
+              {' '}
+              <gh-icon type={'fas fa-code-branch medium'} color={'#596069'}></gh-icon> 1 branch
+            </gh-a>
+            <gh-a>
+              {' '}
+              <gh-icon type={'fas fa-tag medium'} color={'#596069'}></gh-icon> 0 tag
+            </gh-a>
           </div>
           <div class={'right'}>
             <gh-a class={'button'}>Go to file</gh-a>
