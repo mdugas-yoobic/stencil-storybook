@@ -20,11 +20,29 @@ export class GhMainHeader {
           <gh-breadcrumb repo={this.repoData} forked={this.forked}></gh-breadcrumb>
           <div>
             <gh-button>
-              <gh-icon type={'fas fa-thumbtack'} color={'#596069'}></gh-icon>Pin
+              <gh-icon type={'fas fa-thumbtack medium'} color={'#596069'}></gh-icon>Pin
             </gh-button>
-            <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Watch ↓'} dropdownSize={'large'}></gh-dropdown-button>
-            <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Fork ↓'} dropdownSize={'small'}></gh-dropdown-button>
-            <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Star ↓'} dropdownSize={'small'}></gh-dropdown-button>
+            <gh-dropdown-button dropdownAlign={'align-right'} dropdownSize={'large'}>
+              <span slot={'button'}>
+                <gh-icon type={'fas fa-eye medium'} color={'#596069'}></gh-icon>
+                Watch
+                <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
+              </span>
+            </gh-dropdown-button>
+            <gh-dropdown-button dropdownAlign={'align-right'} dropdownSize={'small'}>
+              <span slot={'button'}>
+                <gh-icon type={'fas fa-code-branch medium'} color={'#596069'}></gh-icon>
+                Fork
+                <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
+              </span>
+            </gh-dropdown-button>
+            <gh-dropdown-button dropdownAlign={'align-right'} dropdownSize={'small'}>
+              <span slot={'button'}>
+                <gh-icon type={'far fa-star medium'} color={'#596069'}></gh-icon>
+                Fork
+                <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
+              </span>
+            </gh-dropdown-button>
           </div>
         </div>
         <gh-tabbar tabItems={this.tabbarItems} class={'bottom'}></gh-tabbar>

@@ -16,8 +16,12 @@ export class GhMainSection {
       <Host>
         <header>
           <div class={'left'}>
-            <gh-dropdown-button dropdownSize={'small'} buttonName={'master ↓'} dropdownAlign={'align-left'}>
-              Switch branch
+            <gh-dropdown-button dropdownSize={'small'} dropdownAlign={'align-left'}>
+              <span slot={'button'}>
+                <gh-icon type={'fas fa-code-branch medium'} color={'#596069'}></gh-icon>
+                master
+                <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
+              </span>
             </gh-dropdown-button>
             <gh-a>
               {' '}
@@ -30,11 +34,18 @@ export class GhMainSection {
           </div>
           <div class={'right'}>
             <gh-a class={'button'}>Go to file</gh-a>
-            <gh-dropdown-button dropdownSize={'small'} buttonName={'Add file ↓'} dropdownAlign={'align-right'}>
-              Switch branch
+            <gh-dropdown-button dropdownSize={'small'} dropdownAlign={'align-right'}>
+              <span slot={'button'}>
+                Add file
+                <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
+              </span>
             </gh-dropdown-button>
-            <gh-dropdown-button dropdownSize={'large'} buttonClass={'green'} buttonName={'<> Code ↓'} dropdownAlign={'align-right'}>
-              Switch branch
+            <gh-dropdown-button dropdownSize={'large'} buttonClass={'green'} dropdownAlign={'align-right'}>
+              <span slot={'button'}>
+                <gh-icon type={'fas fa-code medium'} color={'white'}></gh-icon>
+                Code
+                <gh-icon type={'fas fa-caret-down medium'} color={'white'}></gh-icon>
+              </span>
             </gh-dropdown-button>
           </div>
         </header>

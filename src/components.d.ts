@@ -39,7 +39,6 @@ export namespace Components {
     }
     interface GhDropdownButton {
         "buttonClass": string;
-        "buttonName": string;
         "dropdownAlign": string;
         "dropdownSize": string;
     }
@@ -357,7 +356,6 @@ declare namespace LocalJSX {
     }
     interface GhDropdownButton {
         "buttonClass"?: string;
-        "buttonName": string;
         "dropdownAlign"?: string;
         "dropdownSize"?: string;
     }

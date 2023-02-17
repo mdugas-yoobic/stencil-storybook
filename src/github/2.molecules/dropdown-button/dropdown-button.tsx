@@ -6,7 +6,6 @@ import { Component, Element, h, Listen, Prop, State } from '@stencil/core';
   shadow: true
 })
 export class GhDropdownButton {
-  @Prop() buttonName!: string;
   @Prop() buttonClass: string;
 
   @Prop() dropdownSize = 'small';
@@ -30,11 +29,11 @@ export class GhDropdownButton {
     return (
       <div>
         <gh-button onClick={this.toggleDropdown.bind(this)} class={this.buttonClass}>
-          {this.buttonName}
+          <slot name="button" />
         </gh-button>
         {this.showDropdown && (
           <gh-dropdown class={this.dropdownAlign} size={this.dropdownSize}>
-            <p>Test test</p>
+            <slot name="dropdown" />
           </gh-dropdown>
         )}
       </div>
