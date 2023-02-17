@@ -14,9 +14,9 @@ const fileData = {
   filename: 'file.txt',
   commitComment: 'feat: Very very long commit message that should get ellipsed or the layout will break',
   dateField: '1 day ago',
-  icon: 'file'
+  icon: 'far fa-file'
 } as FileData;
-const folderData = { filename: 'folder', commitComment: 'Initial commit', dateField: '1 day ago', icon: 'folder' };
+const folderData = { filename: 'folder', commitComment: 'Initial commit', dateField: '1 day ago', icon: 'fas fa-folder' };
 export const Basic = () => (
   <ul>
     <gh-file-line hover={true} fileData={folderData}></gh-file-line>

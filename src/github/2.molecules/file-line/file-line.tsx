@@ -1,12 +1,10 @@
 import { Component, h, Prop } from '@stencil/core';
 
-import { TIcons } from '../../1.atoms/icon/icon';
-
 export type FileData = {
   filename: string;
   commitComment: string;
   dateField: string;
-  icon: TIcons;
+  icon: string;
 };
 
 @Component({

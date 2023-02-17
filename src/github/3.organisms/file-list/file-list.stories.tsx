@@ -12,9 +12,9 @@ const fileData = {
   filename: 'file.txt',
   commitComment: 'feat: Very very long commit message that should get ellipsed or the layout will break',
   dateField: '1 day ago',
-  icon: 'file'
-} as FileData;
-const folderData = { filename: 'folder', commitComment: 'Initial commit', dateField: '1 day ago', icon: 'folder' };
+  icon: 'far fa-file'
+};
+const folderData = { filename: 'folder', commitComment: 'Initial commit', dateField: '1 day ago', icon: 'fas fa-folder' };
 
 const fileList = [folderData, folderData, fileData, fileData];
 

@@ -9,6 +9,6 @@ export class GhIconTag {
   @Prop() iconColor: string;
 
   render() {
-    return [<gh-icon type="small-circle" color={this.iconColor}></gh-icon>, <slot />];
+    return [<gh-icon type="fas fa-circle small" color={this.iconColor}></gh-icon>, <slot />];
   }
 }

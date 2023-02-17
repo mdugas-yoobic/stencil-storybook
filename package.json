@@ -20,7 +20,7 @@
     "build-storybook": "build-storybook",
     "test": "stencil test --spec",
     "test:watch": "stencil test --spec --watchAll",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes --exit-once-uploaded"
   },
   "dependencies": {
     "@stencil/core": "2.17.4"

@@ -10,9 +10,9 @@ export default {
 
 export const Basic = () => (
   <div>
-    <gh-icon type={'folder'}></gh-icon>
-    <gh-icon type={'file'}></gh-icon>
-    <gh-icon type={'small-circle'} color={'#0ee'}></gh-icon>
-    <gh-icon type={'user'}></gh-icon>
+    <gh-icon type={'fas fa-folder'} color={'red'}></gh-icon>
+    <gh-icon type={'fas fa-folder small'} color={'blue'}></gh-icon>
+    <gh-icon type={'fas fa-folder medium'} color={'blue'}></gh-icon>
+    <gh-icon type={'fas fa-folder large'} color={'blue'}></gh-icon>
   </div>
 );

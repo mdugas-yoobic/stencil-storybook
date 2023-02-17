@@ -6,5 +6,6 @@ module.exports = {
     presets: [['@babel/typescript', { jsxPragma: 'h' }]]
   }),
   framework: '@storybook/html',
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)']
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  staticDirs: [{ from: '../src/assets/fontawesome/webfonts', to: '/webfonts' }]
 };

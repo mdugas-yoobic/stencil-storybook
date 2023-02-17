@@ -1,3 +1,5 @@
+@import '../../../assets/fontawesome/css/all.min.css';
+
 :host {
   display: flex;
   justify-content: center;
@@ -5,31 +7,14 @@
   margin: 3px;
 }
 
-span {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  margin: 1px;
+:host i.small {
+  font-size: 10px;
 }
 
-.folder {
-  background: #3d66cc;
-  border: 2px solid #3d66cc;
+:host i.medium {
+  font-size: 18px;
 }
 
-.file {
-  border: 2px solid black;
-}
-
-.user {
-  height: 20px;
-  width: 20px;
-  border-radius: 100%;
-  border-style: hidden;
-  background: green;
-}
-
-.small-circle {
-  border-radius: 100%;
-  border-style: hidden;
+:host i.large {
+  font-size: 25px;
 }

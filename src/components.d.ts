@@ -9,11 +9,10 @@ import { TLanguage } from "./github/4.templates/about-section/about-section";
 import { TRepoData } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
-import { TIcons } from "./github/1.atoms/icon/icon";
 import { TRepoData as TRepoData1 } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { repoData as repoData1 } from "./github/3.organisms/file-list/file-list";
-import { Item } from "./components/todoItem/todoItem";
-import { Item as Item1 } from "./components/todoItem/todoItem";
+import { Item } from "./old.components/todoItem/todoItem";
+import { Item as Item1 } from "./old.components/todoItem/todoItem";
 export namespace Components {
     interface FirstComp {
         "name": string;
@@ -59,7 +58,7 @@ export namespace Components {
     }
     interface GhIcon {
         "color": string;
-        "type": TIcons;
+        "type": string;
     }
     interface GhIconTag {
         "iconColor": string;
@@ -376,7 +375,7 @@ declare namespace LocalJSX {
     }
     interface GhIcon {
         "color"?: string;
-        "type"?: TIcons;
+        "type"?: string;
     }
     interface GhIconTag {
         "iconColor"?: string;
