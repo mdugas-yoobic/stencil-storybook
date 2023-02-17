@@ -13,10 +13,14 @@ export class GhFooter {
       <Host>
         <hr />
         <footer>
-          <span>&copy; 2023 Github, Inc.</span>
-          {this.items.map((item) => (
-            <gh-a class={'blue underline'}>{item}</gh-a>
-          ))}
+          <span class={'github'}>
+            <gh-icon type={'fab fa-github large'}></gh-icon>&copy; 2023 Github, Inc.
+          </span>
+          <p class={'links'}>
+            {this.items.map((item) => (
+              <gh-a class={'blue underline'}>{item}</gh-a>
+            ))}
+          </p>
         </footer>
       </Host>
     );

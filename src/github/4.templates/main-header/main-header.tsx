@@ -39,7 +39,7 @@ export class GhMainHeader {
             <gh-dropdown-button dropdownAlign={'align-right'} dropdownSize={'small'}>
               <span slot={'button'}>
                 <gh-icon type={'far fa-star medium'} color={'#596069'}></gh-icon>
-                Fork
+                Star
                 <gh-icon type={'fas fa-caret-down medium'} color={'#596069'}></gh-icon>
               </span>
             </gh-dropdown-button>

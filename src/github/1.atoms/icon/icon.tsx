@@ -3,7 +3,6 @@ import { Component, h, Prop } from '@stencil/core';
 @Component({
   tag: 'gh-icon',
   styleUrl: 'icon.css',
-  assetsDirs: ['assets'],
   scoped: true
 })
 export class GhIcon {

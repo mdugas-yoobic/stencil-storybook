@@ -20,3 +20,11 @@ main > .grid2 {
   max-width: 1200px;
   margin: auto;
 }
+
+@media screen and (max-width: 1000px) {
+  main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+}

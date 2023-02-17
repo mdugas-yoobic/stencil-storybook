@@ -6,7 +6,6 @@ div {
   display: flex;
   align-items: center;
   max-width: 200px;
-  width: 200px;
   border: 1px solid #596069;
   border-radius: 4px;
   background: black;

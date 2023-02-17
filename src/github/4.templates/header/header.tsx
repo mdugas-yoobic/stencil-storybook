@@ -12,6 +12,7 @@ export class GhHeader {
   render() {
     return (
       <header>
+        <gh-icon type={'fab fa-github large'} color={'white'}></gh-icon>
         <gh-input placeholder={this.placeholder}></gh-input>
         <gh-navbar items={this.items} class={'inverted'}></gh-navbar>
       </header>

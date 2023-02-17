@@ -3,14 +3,34 @@
 }
 
 footer {
-  height: 100px;
+  min-height: 100px;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  align-items: baseline;
 }
 
-span {
+p.links {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+span.github {
   font-family: sans-serif;
   color: #596069;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 950px) {
+  footer {
+    flex-flow: column wrap;
+    justify-content: baseline;
+    align-items: center;
+  }
+
+  span.github {
+    order: 1;
+  }
 }

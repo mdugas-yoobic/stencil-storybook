@@ -6,6 +6,7 @@ a {
   color: black;
   text-decoration: none;
   position: relative;
+  white-space: nowrap;
 }
 
 a:hover {

@@ -1,5 +1,7 @@
 import { Component, h, Host } from '@stencil/core';
 
+import { TFileType } from '../../2.molecules/file-line/file-line';
+
 @Component({
   tag: 'gh-repo-page',
   styleUrl: 'repo-page.css',
@@ -24,24 +26,24 @@ export class GhMainHeader {
   ];
 
   fileList = [
-    { filename: '.husky', commitComment: 'feat: todo done', dateField: 'last week', icon: 'fas fa-folder' },
-    { filename: '.idea', commitComment: 'feat(config): do not use SCSS file watcher in JetBrains IDEs', dateField: '7 months ago', icon: 'fas fa-folder' },
-    { filename: '.storybook', commitComment: 'feat(storybook): allow using JSX stories', dateField: '7 months ago', icon: 'fas fa-folder' },
-    { filename: 'src', commitComment: 'feat: repo page', dateField: '22 minutes ago', icon: 'fas fa-folder' },
-    { filename: '.commitlintrc', commitComment: 'feat(config): add storybook scope', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.editorconfig', commitComment: 'feat(config): set editor configuration', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.eslintignore', commitComment: 'fix(config): analyze relevant code only', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.eslintrc', commitComment: 'feat(config): sort code imports/exports', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.gitignore', commitComment: 'feat: navitem and start navbar', dateField: 'last week', icon: 'far fa-file' },
-    { filename: '.lintstagedrc', commitComment: 'feat(config): lint staged Git stylesheets', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.prettierignore', commitComment: 'feat(stencil): ignore generated file from code formatter', dateField: '6 months ago', icon: 'far fa-file' },
-    { filename: '.prettierrc', commitComment: 'feat(config): sort code imports/exports', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.stylelintignore', commitComment: 'fix(config): analyze relevant stylesheets only', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: '.stylelintrc', commitComment: 'fix(config): analyze relevant stylesheets only', dateField: '7 months ago', icon: 'far fa-file' },
-    { filename: 'package-lock.json', commitComment: 'feat(stencil): upgrade dependency', dateField: '6 months ago', icon: 'far fa-file' },
-    { filename: 'package.json', commitComment: 'feat: todo done', dateField: 'last week', icon: 'far fa-file' },
-    { filename: 'stencil.config.json', commitComment: 'feat: todo done', dateField: 'last week', icon: 'far fa-file' },
-    { filename: 'tsconfig.json', commitComment: 'feat(stencil): allow importing JSON files', dateField: '6 months ago', icon: 'far fa-file' }
+    { filename: '.husky', commitComment: 'feat: todo done', dateField: 'last week', filetype: 'folder' as TFileType },
+    { filename: '.idea', commitComment: 'feat(config): do not use SCSS file watcher in JetBrains IDEs', dateField: '7 months ago', filetype: 'folder' as TFileType },
+    { filename: '.storybook', commitComment: 'feat(storybook): allow using JSX stories', dateField: '7 months ago', filetype: 'folder' as TFileType },
+    { filename: 'src', commitComment: 'feat: repo page', dateField: '22 minutes ago', filetype: 'folder' as TFileType },
+    { filename: '.commitlintrc', commitComment: 'feat(config): add storybook scope', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.editorconfig', commitComment: 'feat(config): set editor configuration', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.eslintignore', commitComment: 'fix(config): analyze relevant code only', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.eslintrc', commitComment: 'feat(config): sort code imports/exports', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.gitignore', commitComment: 'feat: navitem and start navbar', dateField: 'last week', filetype: 'file' as TFileType },
+    { filename: '.lintstagedrc', commitComment: 'feat(config): lint staged Git stylesheets', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.prettierignore', commitComment: 'feat(stencil): ignore generated file from code formatter', dateField: '6 months ago', filetype: 'file' as TFileType },
+    { filename: '.prettierrc', commitComment: 'feat(config): sort code imports/exports', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.stylelintignore', commitComment: 'fix(config): analyze relevant stylesheets only', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: '.stylelintrc', commitComment: 'fix(config): analyze relevant stylesheets only', dateField: '7 months ago', filetype: 'file' as TFileType },
+    { filename: 'package-lock.json', commitComment: 'feat(stencil): upgrade dependency', dateField: '6 months ago', filetype: 'file' as TFileType },
+    { filename: 'package.json', commitComment: 'feat: todo done', dateField: 'last week', filetype: 'file' as TFileType },
+    { filename: 'stencil.config.json', commitComment: 'feat: todo done', dateField: 'last week', filetype: 'file' as TFileType },
+    { filename: 'tsconfig.json', commitComment: 'feat(stencil): allow importing JSON files', dateField: '6 months ago', filetype: 'file' as TFileType }
   ];
 
   mainRepoData = {

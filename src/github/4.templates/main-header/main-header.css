@@ -3,7 +3,7 @@
   flex-flow: column;
   justify-content: space-between;
   background-color: #f6f8fa;
-  height: 180px;
+  min-height: 180px;
 }
 
 div.top {
@@ -15,4 +15,15 @@ div.top {
 
 div.top > div {
   display: flex;
+}
+
+@media screen and (max-width: 950px) {
+  div.top {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  div.top > div {
+    align-self: flex-end;
+  }
 }
