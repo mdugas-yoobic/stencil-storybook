@@ -27,7 +27,7 @@ export class GhFileList {
       <ul>
         <li>
           <div class={'left'}>
-            <gh-icon type={'user'}> </gh-icon>
+            <gh-icon type={'fas fa-user-circle large'} color={'green'}></gh-icon>
             <gh-a class={'underline'}>{this.repoData.username}</gh-a>
             <gh-a class={'underline'}>{this.repoData.lastCommit}</gh-a>
           </div>

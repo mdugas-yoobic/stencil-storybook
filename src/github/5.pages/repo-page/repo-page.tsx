@@ -11,7 +11,17 @@ export class GhMainHeader {
 
   repoData = { folder: 'mdugas-yoobic', name: 'stencil-storybook' };
   forked = { folder: 'darondel-yoobic', name: 'stencil-storybook' };
-  tabbarItems = ['<> Code', 'H Pull requests', 'O Actions', '[] Projects', '[] Wiki', '{} Security', '|/_ Insights', 'o Settings'];
+  // tabbarItems = ['<> Code', 'H Pull requests', 'O Actions', '[] Projects', '[] Wiki', '{} Security', '|/_ Insights', 'o Settings'];
+  tabbarItems = [
+    { name: 'Code', icon: 'fas fa-code medium', iconColor: '#596069' },
+    { name: 'Pull requests', icon: 'fas fa-code-branch medium', iconColor: '#596069' },
+    { name: 'Actions', icon: 'far fa-play-circle medium', iconColor: '#596069' },
+    { name: 'Projects', icon: 'far fa-square medium', iconColor: '#596069' },
+    { name: 'Wiki', icon: 'fas fa-book-open medium', iconColor: '#596069' },
+    { name: 'Security', icon: 'fas fa-shield-alt medium', iconColor: '#596069' },
+    { name: 'Insights', icon: 'fas fa-chart-line medium', iconColor: '#596069' },
+    { name: 'Settings', icon: 'fas fa-cog medium', iconColor: '#596069' }
+  ];
 
   fileList = [
     { filename: '.husky', commitComment: 'feat: todo done', dateField: 'last week', icon: 'fas fa-folder' },

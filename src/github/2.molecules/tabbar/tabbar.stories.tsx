@@ -8,13 +8,14 @@ export default {
   }
 };
 
-export const Basic = () => (
-  <div>
-    <div>
-      <gh-tabbar items={['First', 'Second', 'Third', 'First', 'Second', 'Third', 'First', 'Second', 'Third']}></gh-tabbar>
-    </div>
-    <div>
-      <gh-tabbar items={['First', 'Second', 'Third', 'First', 'Second', 'Third', 'First', 'Second', 'Third']} class={'inverted'}></gh-tabbar>
-    </div>
-  </div>
-);
+const tabItems = [
+  { name: 'Code', icon: 'fas fa-code medium', iconColor: '#596069' },
+  { name: 'Pull requests', icon: 'fas fa-code-branch medium', iconColor: '#596069' },
+  { name: 'Actions', icon: 'far fa-play-circle medium', iconColor: '#596069' },
+  { name: 'Projects', icon: 'far fa-square medium', iconColor: '#596069' },
+  { name: 'Wiki', icon: 'fas fa-book-open medium', iconColor: '#596069' },
+  { name: 'Security', icon: 'fas fa-shield-alt medium', iconColor: '#596069' },
+  { name: 'Insights', icon: 'fas fa-chart-line medium', iconColor: '#596069' },
+  { name: 'Settings', icon: 'fas fa-cog medium', iconColor: '#596069' }
+];
+export const Basic = () => <gh-tabbar tabItems={tabItems}></gh-tabbar>;

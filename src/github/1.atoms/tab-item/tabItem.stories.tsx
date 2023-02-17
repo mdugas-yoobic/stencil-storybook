@@ -8,13 +8,17 @@ export default {
   }
 };
 
+const tabItems = [
+  { name: 'Selected' },
+  { name: 'Not Selected', icon: 'fas fa-star small' },
+  { name: 'Not Selected', icon: 'fas fa-code-branch medium', iconColor: 'cyan' },
+  { name: 'Not Selected', icon: 'far fa-file large', iconColor: 'green' }
+];
 export const Basic = () => (
   <div>
-    <gh-tab-item class={'selected'}>Selected</gh-tab-item>
-    <gh-tab-item>Not selected</gh-tab-item>
-    <gh-tab-item>
-      {' '}
-      <gh-icon type="fas fa-code"></gh-icon> Not selected 2
-    </gh-tab-item>
+    <gh-tab-item class={'selected'} tabItem={tabItems[0]}></gh-tab-item>
+    <gh-tab-item tabItem={tabItems[1]}></gh-tab-item>
+    <gh-tab-item tabItem={tabItems[2]}></gh-tab-item>
+    <gh-tab-item tabItem={tabItems[3]}></gh-tab-item>
   </div>
 );

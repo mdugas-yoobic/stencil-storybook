@@ -10,7 +10,9 @@ import { TRepoData } from "./github/2.molecules/breadcrumb/breadcrumb";
 import { FileData } from "./github/2.molecules/file-line/file-line";
 import { repoData } from "./github/3.organisms/file-list/file-list";
 import { TRepoData as TRepoData1 } from "./github/2.molecules/breadcrumb/breadcrumb";
+import { TTabItemData } from "./github/1.atoms/tab-item/tabItem";
 import { repoData as repoData1 } from "./github/3.organisms/file-list/file-list";
+import { TTabItemData as TTabItemData1 } from "./github/1.atoms/tab-item/tabItem";
 import { Item } from "./old.components/todoItem/todoItem";
 import { Item as Item1 } from "./old.components/todoItem/todoItem";
 export namespace Components {
@@ -70,7 +72,7 @@ export namespace Components {
     interface GhMainHeader {
         "forked": TRepoData1;
         "repoData": TRepoData1;
-        "tabbarItems": string[];
+        "tabbarItems": TTabItemData[];
     }
     interface GhMainSection {
         "items": string[];
@@ -94,9 +96,10 @@ export namespace Components {
         "sectionNumber": number;
     }
     interface GhTabItem {
+        "tabItem": TTabItemData;
     }
     interface GhTabbar {
-        "items": string[];
+        "tabItems": TTabItemData[];
     }
     interface ItemList {
         "delay": number;
@@ -387,7 +390,7 @@ declare namespace LocalJSX {
     interface GhMainHeader {
         "forked"?: TRepoData1;
         "repoData"?: TRepoData1;
-        "tabbarItems"?: string[];
+        "tabbarItems"?: TTabItemData[];
     }
     interface GhMainSection {
         "items"?: string[];
@@ -411,9 +414,10 @@ declare namespace LocalJSX {
         "sectionNumber"?: number;
     }
     interface GhTabItem {
+        "tabItem"?: TTabItemData;
     }
     interface GhTabbar {
-        "items"?: string[];
+        "tabItems"?: TTabItemData[];
     }
     interface ItemList {
         "delay"?: number;

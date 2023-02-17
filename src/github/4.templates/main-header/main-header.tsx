@@ -1,5 +1,6 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 
+import { TTabItemData } from '../../1.atoms/tab-item/tabItem';
 import { TRepoData } from '../../2.molecules/breadcrumb/breadcrumb';
 
 @Component({
@@ -10,7 +11,7 @@ import { TRepoData } from '../../2.molecules/breadcrumb/breadcrumb';
 export class GhMainHeader {
   @Prop() repoData: TRepoData;
   @Prop() forked: TRepoData;
-  @Prop() tabbarItems: string[];
+  @Prop() tabbarItems: TTabItemData[];
 
   render() {
     return (
@@ -26,7 +27,7 @@ export class GhMainHeader {
             <gh-dropdown-button dropdownAlign={'align-right'} buttonName={'Star ↓'} dropdownSize={'small'}></gh-dropdown-button>
           </div>
         </div>
-        <gh-tabbar items={this.tabbarItems} class={'bottom'}></gh-tabbar>
+        <gh-tabbar tabItems={this.tabbarItems} class={'bottom'}></gh-tabbar>
       </Host>
     );
   }
